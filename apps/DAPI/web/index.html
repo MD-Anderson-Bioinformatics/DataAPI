@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script src="Title.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function loadGoogleAnalytics(trackingID)
+			{
+				var gaScript = document.createElement('script');
+				gaScript.setAttribute('async', 'true');
+				gaScript.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${ trackingID }`);
+
+				var gaScript2 = document.createElement('script');
+				gaScript2.innerText = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'${ trackingID }\');`;
+
+				document.documentElement.firstChild.appendChild(gaScript);
+				document.documentElement.firstChild.appendChild(gaScript2);
+			};
+
+			// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+			var globalGtagId = getGtagId();
+			loadGoogleAnalytics(globalGtagId);
+		</script>
+		<title>BCB Data Query Form</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<link href="tippy.css" rel="stylesheet" type="text/css">
+		<link href="jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+		<link href="sel2-4.0.13/select2.min.css" rel="stylesheet" type="text/css">
+		<link href="DataTables/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+		<link href="dapi.css" rel="stylesheet" type="text/css">
+		
+		<script src="knockout-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="sel2-4.0.13/select2.full.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DAPIAppView.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="tippy.js"></script>
+		
+		<script type="text/javascript">
+			/* global ko */
+			
+			// this makes sure that nothing gets called until page and required JS files are loaded
+			var appview = null;
+			$(document).ready(function()
+			{
+				// Activates knockout.js
+				ko.options.deferUpdates = true;
+				appview = new AppViewModel();
+				ko.applyBindings(appview);
+				initializeTooltips();
+				setTimeout(function() {document.getElementById('alrtLegalNotice').style.display = "none";},3000);
+				////////////////////////////////////////////////////////////////
+				//// this is used to prevent "flickering" characteristic on load with knockoutJS
+				////////////////////////////////////////////////////////////////
+				appview.makeGuiVisible(true);
+			});
+		</script>
+	</head>
+	<body style="display: none;" data-bind="visible: $root.makeGuiVisible()">
+		<div id='alrtLegalNotice'>
+			<p onclick="document.getElementById('alrtLegalNotice').style.display = 'none';"><small>Legal notice: Unauthorized access to the network is prohibited. This system is for the use of authorized users only. 
+				Individuals using this computer system without authority, or in excess of their authority, are subject to having all of 
+				their activities on this system monitored and recorded by system personnel. In the course of monitoring individuals 
+				improperly using this system, or in the course of system maintenance, the activities of authorized users may also be 
+				monitored. Anyone using this system expressly consents to such monitoring and is advised that if such monitoring reveals 
+				possible evidence of criminal activity, system personnel may provide the evidence of such monitoring to law enforcement officials.
+				(Auto-displayed notice will close after 3 seconds or click this banner to hide.)</small>
+			</p>
+		</div>
+		<div class="mdaServiceHeader">
+			<a href="https://bioinformatics.mdanderson.org/public-software/tcga-batch-effects/" target="_blank" style="float: left;"><img class="mdaServiceHeaderLogo" src="mdandersonlogo300x54.png" alt="MDA Logo"></a>
+			<!-- put cut and paste inputs here, to avoid DOM mangling by tippy -->
+			<input type="text" readonly style="opacity: 0; position: absolute; z-index: -9999; pointer-events: none;" value="" id="dapiCopyQuery">
+			<input type="text" readonly style="opacity: 0; position: absolute; z-index: -9999; pointer-events: none;" value="" id="dapiCopyURL">
+			<div class="mdaServiceHeaderTitle">
+				<div class="mdaTitleText">&nbsp;&nbsp;<span class="mdaTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-07-20-1100</small></div>
+				<div class="tooltip mdaHeaderLinks">
+					<img id="tooltipImage_Burger" title="Menu Options" data-theme="myTooltipTheme" src="images/hamburger_icon.png" alt="Menu Options">
+					<div id="tooltipContent_Burger" class="tooltiptext">
+						<strong>Documentation</strong><br>
+						<a href="QFusage.html" target="_blank"><small>Help/Usage</small></a><br>
+						<a href="GDCConverters.html" target="_blank"><small>Conversion from GDC Data</small></a><br>
+						<a href="" onclick="document.getElementById('alrtLegalNotice').style.display = 'block'; return false;">Legal Notice</a><br>
+						<a href="https://github.com/MD-Anderson-Bioinformatics/" target="_blank"><small>GitHub</small></a><br>
+						<strong>URLs and R Package Utilities</strong><br>
+						<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyQueryString()">Copy Query String for R Package</button><br>
+						<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyURLString()">Copy Bookmark-able URL</button><br>
+						<strong>About</strong><br>
+						<a href="https://bioinformatics.mdanderson.org" target="_blank"><small>About BCB at MD Anderson</small></a><br>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-bind="if: ((('Development Viewer'===getDAPItitle()) || ('Batch Effects Viewer'===getDAPItitle())) && ('matrix'===$root.urlShowParam()))">
+			<a style="font-size: small;" data-bind="attr: { href: '?show=dsc' }" >Switch to DSC Values</a>
+			<br>
+		</div>
+		<div data-bind="if: ((('Development Viewer'===getDAPItitle()) || ('Batch Effects Viewer'===getDAPItitle())) && ('dsc'===$root.urlShowParam()))">
+			<a style="font-size: small;" data-bind="attr: { href: '?show=matrix' }" >Switch to Datasets</a>
+			<br>
+		</div>
+		<div>
+			<div class="stdBgColor availSelDiv">
+				<div class="gridSizesTitle fixedHeaderNbsp">&nbsp;</div>
+				<div class="gridSizesSelected rotateLeftHeaderSelected" style="padding-bottom: 1px;">Selected</div>
+				<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+				<div class="rotateLeftHeaderAvailable">Available</div>
+			</div>
+			<div class="availSelDiv">
+				<div class="availSelDevLabelLeft">
+					<label class="gridSizesTitle">Files</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATfiles" title="Files Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Files Category">
+						<div id="tooltipContent_CATfiles" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Files Category lists the available types of files found within each dataset archive.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedFiles, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedFiles, $root.optionsFiles);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsFiles, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedFiles, $root.optionsFiles);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Sources</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATSources" title="Sources Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Sources Category">
+						<div id="tooltipContent_CATSources" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Source Category lists the source of the data, such as the GDC or PanCan Study Group.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedSources, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedSources, $root.optionsSources);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsSources, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedSources, $root.optionsSources);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Derivations</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATDerivations" title="Derivations Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Derivations Category">
+						<div id="tooltipContent_CATDerivations" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Derivations Category lists the derivation of data within a Source, such as, for the GDC, "current" or "legacy" data.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedVariants, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedVariants, $root.optionsVariants);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsVariants, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedVariants, $root.optionsVariants);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Archive Type</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATData" title="Archive Type Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Archive Type Category">
+						<div id="tooltipContent_CATData" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Archive Type Category lists the variation of data in the dataset--for the GDC, this is "standardized". Other datasets may provide other Archive Type Categories.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedDatas, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedDatas, $root.optionsDatas);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsDatas, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedDatas, $root.optionsDatas);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Algorithms</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATAlgorithms" title="Algorithms Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Algorithms Category">
+						<div id="tooltipContent_CATAlgorithms" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Algorithms Category divides the data into "continuous", amenable to most standardize statistical processing, and "discrete", generally sparse matrices and not amenable to many statistical methods.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedAlgorithms, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedAlgorithms, $root.optionsAlgorithms);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsAlgorithms, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedAlgorithms, $root.optionsAlgorithms);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Versions</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATVersions" title="Versions Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Versions Category">
+						<div id="tooltipContent_CATVersions" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Versions Category are the timestamps for when the data was acquired by the Query Form. This Category works different from the rest. By default, the Query Form will show the newest version of each dataset. Selecting one or more Versions, limits the results to that particular version. Note that in Standardized Data, each Version may only contain a single dataset.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedVersions, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedVersions, $root.optionsVersions);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsVersions, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedVersions, $root.optionsVersions);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Projects</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATProjects" title="Projects Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Projects Category">
+						<div id="tooltipContent_CATProjects" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Projects Category lists the higher-level project, like TCGA or TARGET, for the dataset.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedProjects, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedProjects, $root.optionsProjects);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsProjects, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedProjects, $root.optionsProjects);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Sub-Projects</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATSubProjects" title="Sub-Projects Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Sub-Projects Category">
+						<div id="tooltipContent_CATSubProjects" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Sub-Projects Category lists what is generally the disease (cancer type) being processed. Some Projects do not divide data by disease, hence the more generic name for this Category.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedSubprojects, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedSubprojects, $root.optionsSubprojects);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsSubprojects, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedSubprojects, $root.optionsSubprojects);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Data Type</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATCategories" title="Data Type Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Data Type Category">
+						<div id="tooltipContent_CATCategories" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Data Type Category divides the datasets into general type of data. Currently, some Data Types can be overly specific (such as for different mutation data) and some overly general or redundant (such as "Copy Number Segment" and "Copy number variation").</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedCategories, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedCategories, $root.optionsCategories);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsCategories, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedCategories, $root.optionsCategories);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div class="availSelDevLabel">
+					<label class="gridSizesTitle">Details</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATDetails" title="Details Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Details Category">
+						<div id="tooltipContent_CATDetails" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Details Category allows filtering on detailed options for datasets, in particular the Methylation data option to include (wXY) or exclude (noXY) sex chromosomes.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedDetails, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedDetails, $root.optionsDetails);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsDetails, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedDetails, $root.optionsDetails);} }" size="5"></select>
+				</div>
+			</div><div class="availSelDiv">
+				<div data-bind="class: ('dsc'===$root.urlShowParam()) ? 'availSelDevLabel' : 'availSelDevLabelRight' ">
+					<label class="gridSizesTitle">Platforms</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATPlatforms" title="Platforms Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Platforms Category">
+						<div id="tooltipContent_CATPlatforms" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Platforms Category lists the available platforms. Currently, some may be redundant and misleading, such as the Legacy GDC data having "Illumina Human Methylation 27" and "Illumina Human Methylation 450" compared to the Current GDC data using "Liftover".</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedPlatforms, event: {change: function(data, event) {selectChangeInSelected(data, event, $root.selectedPlatforms, $root.optionsPlatforms);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsPlatforms, event: {change: function(data, event) {selectChangeInOptions(data, event, $root.selectedPlatforms, $root.optionsPlatforms);} }" size="5"></select>
+				</div>
+			</div><div data-bind="if: ('dsc'===$root.urlShowParam())" class="availSelDiv">
+				<div class="availSelDevLabelRight">
+					<label class="gridSizesTitle">DSC P-Value*</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATDSCPvalue" title="DSC P-Value Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Platforms Category">
+						<div id="tooltipContent_CATDSCPvalue" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>*DSC P-Values are not corrected for multiple testing.<br>The DSC P-Value Category lists common p-value cut-offs.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<select class="gridSizesSelected" style="display: flex; flex-direction: row;" data-bind="options: $root.selectedOverallDSCpvalue, event: {change: function(data, event) {selectChangeInSelectedSingle(data, event, $root.selectedOverallDSCpvalue, $root.optionsOverallDSCpvalue);} }" size="3"></select>
+					<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+					<select class="gridSizesAvailable" style="display: flex; flex-direction: row;" data-bind="options: $root.optionsOverallDSCpvalue, event: {change: function(data, event) {selectChangeInOptionsSingle(data, event, $root.selectedOverallDSCpvalue, $root.optionsOverallDSCpvalue);} }" size="5"></select>
+				</div>
+			</div>
+			<div class="stdBgColor availSelDiv">
+				<div class="gridSizesTitle fixedHeaderNbsp">&nbsp;</div>
+				<div class="gridSizesSelected rotateRightHeaderSelected" style="padding-bottom: 1px; padding-left: 2px;">Selected</div>
+				<div class="gridSizesArrowWrapper"><div class="gridSizesArrow ui-icon ui-icon-caret-2-n-s"></div></div>
+				<div class="gridSizesAvailable rotateRightHeaderAvailable" style="padding-left: 2px;">Available</div>
+			</div>
+			<div data-bind="if: ('dsc'===$root.urlShowParam())" class="availSelDiv">
+				<div class="availSelDevLabelLeft">
+					<label class="gridSizesTitle">Min DSC Value</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATDSCmin" title="Min DSC Value Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Platforms Category">
+						<div id="tooltipContent_CATDSCmin" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Min DSC Value indicates the DSC of the results should be less than or equal to this value. Empty means accept any value.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<input id="InputOverallDSCmin" type="number" step="0.001" min="0" data-bind="value: $root.enteredOverallDSCmin">
+					<center><button style="font-size: 10px; padding: 0px;" data-bind="click:  function() { updateEnteredSelected($root.enteredOverallDSCmin, $root.selectedOverallDSCmin, 'InputOverallDSCmin'); }">Apply</button></center>
+				</div>
+			</div><div data-bind="if: ('dsc'===$root.urlShowParam())" class="availSelDiv">
+				<div class="availSelDevLabelRight">
+					<label class="gridSizesTitle">Max DSC Value</label>
+					<div class="tooltip inlineblock">
+						<img id="tooltipImage_CATDSCmax" title="Max DSC Value Category" data-theme="myTooltipTheme" src="images/Tooltip_icon.png" class="guiIconDimensions" alt="More Info on Platforms Category">
+						<div id="tooltipContent_CATDSCmax" class="tooltiptext">
+							<div class="marginTop10px">
+								<p>The Max DSC Value indicates the DSC of the results should be less than or equal to this value. Empty means accept any value.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="availSelPaddedDiv">
+					<input id="InputOverallDSCmax" type="number" step="0.001" min="0" data-bind="value: $root.enteredOverallDSCmax">
+					<center><button style="font-size: 10px; padding: 0px;" data-bind="click:  function() { updateEnteredSelected($root.enteredOverallDSCmax, $root.selectedOverallDSCmax, 'InputOverallDSCmax'); }">Apply</button></center>
+				</div>
+			</div>
+			<br>
+			<center class="centerTableHeader">Available Data (N=<span data-bind="text: $root.queryResultLength()"></span>) 
+				<button style="font-size: 10px; padding: 0px; height: 20px;" 
+					data-bind="click: function(data, event) { window.location.href= 
+								'manifest?baseURL='+ encodeURIComponent(window.location.origin + window.location.pathname) + 
+								'&show=' + $root.urlShowParam() +
+								'&search=' + encodeURIComponent($root.jsonQueryString()); }">Download Manifest</button>
+			</center>
+			<table class="display compact mdaSmallText" id="resultsTable" style="width:100%;"></table>
+		</div>
+	</body>
+</html>

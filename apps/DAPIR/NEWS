@@ -1,0 +1,25 @@
+
+	**************************************************
+	*						 *
+	*	       1.7 SERIES NEWS			 *
+	*						 *
+	**************************************************
+
+		CHANGES IN R VERSION 1.7.0
+
+NEW FEATURES
+
+    o	Version set to match MBatch/MBatchUtils versions
+    o	Updated to new DAPI HTTP interface
+
+		CHANGES IN R VERSION 0.1.1
+
+NEW FEATURES
+
+    o	Updated default URL.
+
+		CHANGES IN R VERSION 0.1.0
+
+NEW FEATURES
+
+    o	First release

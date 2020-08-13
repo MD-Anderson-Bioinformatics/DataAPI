@@ -1,0 +1,578 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 5.3.6.1 (Linux)"/>
+	<meta name="author" content="Casasent,Tod D"/>
+	<meta name="created" content="2019-12-23T15:02:00"/>
+	<meta name="changedby" content="Tod Casasent"/>
+	<meta name="changed" content="2020-06-26T15:24:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="M. D. Anderson Cancer Center"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { margin: 0.5in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 120%; text-align: left; orphans: 2; widows: 2 }
+		p.western { font-family: "Century Schoolbook", serif }
+		h1 { margin-bottom: 0in; direction: ltr; color: #2e74b5; line-height: 108%; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2 }
+		h1.western { font-family: "Century Schoolbook", serif; font-size: 16pt; font-weight: normal }
+		h1.cjk { font-family: ; font-size: 16pt; font-weight: normal }
+		h1.ctl { font-family: ; font-size: 16pt; font-weight: normal }
+		h2 { margin-top: 0.03in; margin-bottom: 0in; direction: ltr; color: #2e74b5; line-height: 108%; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2 }
+		h2.western { font-family: "Century Schoolbook", serif; font-size: 13pt; font-weight: normal }
+		h2.cjk { font-family: ; font-size: 13pt; font-weight: normal }
+		h2.ctl { font-family: ; font-size: 13pt; font-weight: normal }
+		a:link { color: #0563c1 }
+	</style>
+</head>
+<body lang="en-US" link="#0563c1" dir="ltr">
+<p class="western" align="center" style="margin-bottom: 0.11in; line-height: 108%"><a name="_GoBack"></a>
+<b>Data Query Form<br/>
+Tod Casasent<br/>
+2020-06-26-1030</b></p>
+<ol>
+	<li/>
+<h1 class="western">Introduction</h1>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">This
+document gives simple instructions for using the Data Query Form.
+This document will provide minimal, but some, descriptions of
+elements such as Platforms and data descriptions.</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Note:
+A future version of the Data Query Form will provide mapping to make
+the options lists more user friendly and less dependent on the
+dataset source strings.</p>
+<ol>
+	<ol>
+		<li/>
+<h2 class="western">Links</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Query
+Form / Standardized Data
+Browser<br/>
+<a href="https://bioinformatics.mdanderson.org/StandardizedDataBrowser">https://bioinformatics.mdanderson.org/StandardizedDataBrowser</a></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Batch
+Effects
+Viewer<br/>
+<a href="https://bioinformatics.mdanderson.org/BatchEffectsViewer">https://bioinformatics.mdanderson.org/BatchEffectsViewer</a></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">BMB
+on GitHub (source code and additional
+documentation)<br/>
+<a href="https://github.com/MD-Anderson-Bioinformatics/">https://github.com/MD-Anderson-Bioinformatics/</a></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">BCB
+on Docker Hub (Docker images)<br/>
+<a href="https://hub.docker.com/u/mdabcb">https://hub.docker.com/u/mdabcb</a></p>
+<ol start="2">
+	<li/>
+<h1 class="western">Categories and Category Options</h1>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Data Query Form has 11 categories. Most categories work the same for
+selecting and filtering data---Versions is the one exception. For the
+regular categories, selecting an option within a category limits the
+results to elements with that option. Selecting more than one option
+acts as an &quot;or&quot; so that, for example if you select
+&quot;TCGA-COAD&quot; and &quot;TCGA-READ&quot; Sub-Projects, you get
+both COAD and READ data.</p>
+<ol>
+	<ol>
+		<li/>
+<h2 class="western">Files Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Files Category lists the available types of files found within each
+dataset archive.</p>
+<ol>
+	<ol start="2">
+		<li/>
+<h2 class="western">Sources Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Source Category lists the source of the data, such as the GDC or
+PanCan Study Group.</p>
+<ol>
+	<ol start="3">
+		<li/>
+<h2 class="western">Derivations Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Derivations Category lists the derivation of data within a Source,
+such as, for the GDC, &quot;current&quot; or &quot;legacy&quot; data.</p>
+<ol>
+	<ol start="4">
+		<li/>
+<h2 class="western">Archive Type Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Archive Type Category lists the variation of data in the dataset--for
+the GDC, this is &quot;standardized&quot;. Other datasets may provide
+other Archive Type Categories.</p>
+<ol>
+	<ol start="5">
+		<li/>
+<h2 class="western">Algorithms Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Algorithms Category divides the data into &quot;continuous&quot;,
+amenable to most standardize statistical processing, and &quot;discrete&quot;,
+generally sparse matrices and not amenable to many statistical
+methods</p>
+<ol>
+	<ol start="6">
+		<li/>
+<h2 class="western">Versions Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Versions Category are the timestamps for when the data was acquired
+by the Query Form. This Category works different from the rest. By
+default, the Query Form will show the newest version of each dataset.
+Selecting one or more Versions, limits the results to that particular
+version. Note that in Standardized Data, each Version may only
+contain a single dataset.</p>
+<ol>
+	<ol start="7">
+		<li/>
+<h2 class="western">Projects Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Projects Category lists the higher-level project, like TCGA or
+TARGET, for the dataset.</p>
+<ol>
+	<ol start="8">
+		<li/>
+<h2 class="western">Sub-Projects Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Sub-Projects Category lists what is generally the disease (cancer
+type) being processed. Some Projects do not divide data by disease,
+hence the more generic name for this Category.</p>
+<ol>
+	<ol start="9">
+		<li/>
+<h2 class="western">Data Type Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Data Type Category divides the datasets into general type of data.
+Currently, some categories can be overly specific (such as for
+different mutation data) and some overly general or redundant (such
+as &quot;Copy Number Segment&quot; and &quot;Copy number variation&quot;).
+Filters are in place to address much of that.</p>
+<ol>
+	<ol start="10">
+		<li/>
+<h2 class="western">Details Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Details Category allows filtering on detailed options for datasets,
+in particular the Methylation data option to include (wXY) or exclude
+(noXY) sex chromosomes.</p>
+<ol>
+	<ol start="11">
+		<li/>
+<h2 class="western">Platforms Category</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Platforms Category lists the available platforms. Currently, some may
+be redundant and misleading, such as the Legacy GDC data having
+&quot;Illumina Human Methylation 27&quot; and &quot;Illumina Human
+Methylation 450&quot; compared to the Current GDC data using
+&quot;Liftover&quot;.</p>
+<ol start="3">
+	<li/>
+<h1 class="western">File Formats</h1>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">There
+are five files provided within datasets.</p>
+<ol>
+	<ol>
+		<li/>
+<h2 class="western">matrix_data.tsv</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+Standardized Data &quot;Data Matrix&quot; format is a tab delimited
+file. The first line of the file begins with a tab and contains
+sample identifiers. For Standardized Data, the sample identifiers are
+bar codes. Each subsequent row begins with a Feature Identifier and
+is followed by numeric data. Feature Identifiers are specific to the
+platform but can be values such as Hugo Gene ids, probe ids, or
+microRNA identifiers.</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">This
+extract from the Data Matrix format shows four sample ids and five
+feature ids. Note that the first blank cell indicates the starting
+tab for the sample identifiers line. The features (left-most column)
+can be any set of unique strings. For proper processing, the rows and
+columns should be sorted.</p>
+<table width="100%" cellpadding="7" cellspacing="0">
+	<col width="61*">
+	<col width="49*">
+	<col width="49*">
+	<col width="49*">
+	<col width="49*">
+	<tr valign="bottom">
+		<td width="24%" height="5" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western"><br/>
+
+			</p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">TCGA-OR-A5J2-01A-21-A39K-20</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">TCGA-OR-A5J3-01A-21-A39K-20</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">TCGA-OR-A5J6-01A-41-A39K-20</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">TCGA-OR-A5J7-01A-21-A39K-20</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="24%" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western"><font color="#000000">14-3-3_beta-R-V</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.211404</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.14778</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.220188</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.02738</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="24%" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western"><font color="#000000">14-3-3_epsilon-M-C</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.03151</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.12861</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.0762</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.02275</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="24%" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western"><font color="#000000">14-3-3_zeta-R-V</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.01203</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.032791</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">-0.34541</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.136629</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="24%" height="5" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western"><font color="#000000">4E-BP1-R-V</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.589134</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.365167</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">0.297887</font></p>
+		</td>
+		<td width="19%" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center"><font color="#000000">7.34E-05</font></p>
+		</td>
+	</tr>
+</table>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<ol>
+	<ol start="2">
+		<li/>
+<h2 class="western">batches.tsv</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid">
+The Standardized Data Batch File format is also a tab delimited file.
+The first line of the file contains the sample id column id and batch
+type identifiers, none of which should contain spaces. The first
+entry should be the &quot;Sample&quot; column, which contains sample
+ids. Some non-batch types may include type and patient entries for
+cross-reference purposes.</p>
+<table width="713" cellpadding="7" cellspacing="0">
+	<col width="228">
+	<col width="34">
+	<col width="55">
+	<col width="50">
+	<col width="64">
+	<col width="196">
+	<tr valign="bottom">
+		<td width="228" height="5" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">Sample</font></p>
+		</td>
+		<td width="34" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">Type</font></p>
+		</td>
+		<td width="55" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">BatchId</font></p>
+		</td>
+		<td width="50" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">PlateId</font></p>
+		</td>
+		<td width="64" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">ShipDate</font></p>
+		</td>
+		<td width="196" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">TSS</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="228" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">TCGA-OR-A5J2-01A-21-A39K-20</font></p>
+		</td>
+		<td width="34" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">1</font></p>
+		</td>
+		<td width="55" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">304</font></p>
+		</td>
+		<td width="50" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">A39K</font></p>
+		</td>
+		<td width="64" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">5/7/2014</font></p>
+		</td>
+		<td width="196" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">OR - University of Michigan</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="228" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">TCGA-OR-A5J3-01A-21-A39K-20</font></p>
+		</td>
+		<td width="34" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">1</font></p>
+		</td>
+		<td width="55" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">304</font></p>
+		</td>
+		<td width="50" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">A39K</font></p>
+		</td>
+		<td width="64" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">5/7/2014</font></p>
+		</td>
+		<td width="196" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">OR - University of Michigan</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="228" height="6" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">TCGA-OR-A5J6-01A-41-A39K-20</font></p>
+		</td>
+		<td width="34" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">1</font></p>
+		</td>
+		<td width="55" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">304</font></p>
+		</td>
+		<td width="50" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">A39K</font></p>
+		</td>
+		<td width="64" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">5/7/2014</font></p>
+		</td>
+		<td width="196" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">OR - University of Michigan</font></p>
+		</td>
+	</tr>
+	<tr valign="bottom">
+		<td width="228" height="5" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">TCGA-OR-A5J7-01A-21-A39K-20</font></p>
+		</td>
+		<td width="34" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">1</font></p>
+		</td>
+		<td width="55" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">304</font></p>
+		</td>
+		<td width="50" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">A39K</font></p>
+		</td>
+		<td width="64" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">5/7/2014</font></p>
+		</td>
+		<td width="196" bgcolor="#ffffff" style="background: #ffffff" style="border: 1px solid #00000a; padding-top: 0in; padding-bottom: 0in; padding-left: 0.08in; padding-right: 0.08in">
+			<p class="western" align="center" style="page-break-inside: avoid; page-break-after: avoid">
+			<font color="#000000">OR - University of Michigan</font></p>
+		</td>
+	</tr>
+</table>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<ol>
+	<ol start="3">
+		<li/>
+<h2 class="western">clinical.tsv</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Clinical
+TSV files follow the same format as batches.tsv with different column
+headers rather than batch information.</p>
+<ol>
+	<ol start="4">
+		<li/>
+<h2 class="western">index.json</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid">
+This is a simple JSON file describing each Category option that
+defines this dataset:</p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+<font size="1" style="font-size: 8pt">{</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;source&quot;: &quot;GDC&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;variant&quot;:
+&quot;current&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;project&quot;: &quot;TCGA&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;subProject&quot;:
+&quot;TCGA-CHOL&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;category&quot;: &quot;Copy
+Number Segment&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;platform&quot;:
+&quot;DNAcopy&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;data&quot;:
+&quot;standardized&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;algorithm&quot;:
+&quot;discrete&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;details&quot;: &quot;&quot;,</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+  <font size="1" style="font-size: 8pt">&quot;version&quot;:
+&quot;2020_01_31_0845&quot;</font></p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #deeaf6; page-break-after: avoid">
+<font size="1" style="font-size: 8pt">}</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+<ol>
+	<ol start="5">
+		<li/>
+<h2 class="western">mutations.tsv</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+mutations.tsv file is a tab delimited file based on the Mutation MAF
+files with column headers standardized. Headers should be
+self-evident to users familiar with mutation datasets.</p>
+<ol start="4">
+	<li/>
+<h1 class="western">URLs and R Package Utilities</h1>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid">
+<img src="data:image/png;base64,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" name="Picture 1" align="bottom" hspace="1" width="339" height="204" border="0"/>
+</p>
+<ol>
+	<ol>
+		<li/>
+<h2 class="western">Copy Query String for R Package</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid">
+Clicking the &quot;Copy Query String for R Package&quot; button
+copies a string to the clipboard based on the data query selected in
+the GUI. For example, this string gives current TCGA-ACC data from
+the 2020_01_31_0845 data run.</p>
+<p style="margin-bottom: 0in; line-height: 100%; page-break-inside: avoid; background: #bfbfbf; page-break-after: avoid">
+<font size="2" style="font-size: 9pt">{\&quot;mFiles\&quot;:[\&quot;batches.tsv\&quot;],\&quot;mSources\&quot;:[],\&quot;mVariants\&quot;:[\&quot;current\&quot;],\&quot;mProjects\&quot;:[],\&quot;mSubprojects\&quot;:[\&quot;TCGA-ACC\&quot;],\&quot;mCategories\&quot;:[],\&quot;mPlatforms\&quot;:[],\&quot;mData\&quot;:[],\&quot;mAlgorithms\&quot;:[],\&quot;mDetails\&quot;:[],\&quot;mVersions\&quot;:[\&quot;2020_01_31_0845\&quot;]}</font></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">This
+string is used in the DAPIR R Package function
+checkDownloadedDataStatus to create and update a local copy of
+Standardized Data.</p>
+<ol>
+	<ol start="2">
+		<li/>
+<h2 class="western">Copy Bookmark-able URL</h2>
+	</ol>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Clicking
+the &quot;Copy Bookmark-able URL&quot; button copies a string to the
+clipboard based on the data query selected in the GUI. The string is
+a URL that links to the selected query defined in the GUI.</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%"><br/>
+<br/>
+
+</p>
+</body>
+</html>

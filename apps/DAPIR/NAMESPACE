@@ -1,0 +1,27 @@
+importFrom("httr", "GET", "stop_for_status", "content")
+importFrom("utils", "unzip", "download.file", "URLencode")
+
+####
+#### Base URL functions
+####
+
+export(setGlobalUrl)
+export(getGlobalUrl)
+
+####
+#### data list functions
+####
+
+export(checkDownloadedDataStatus)
+
+####
+#### download functions
+####
+
+export(downloadData)
+
+####
+#### maintenance functions
+####
+
+export(deleteData)

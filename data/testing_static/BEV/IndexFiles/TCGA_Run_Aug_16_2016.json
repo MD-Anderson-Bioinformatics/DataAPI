@@ -1,0 +1,1937 @@
+{
+  "mLabel": "Available TCGA Results",
+  "mName": "TCGA Run Aug 16 2016",
+  "mDefaultDiagram": [],
+  "mChildren": [
+    {
+      "mLevel": 0,
+      "mDiagramFlag": false,
+      "mZipFile": "",
+      "mInternalLocation": "",
+      "mAlgorithm": "",
+      "mLabel": "Disease",
+      "mName": "ALL",
+      "mChildren": [
+        {
+          "mLevel": 1,
+          "mDiagramFlag": false,
+          "mZipFile": "/BEV_TEST/2016_08_16_1052/ALL/ALL/Scores/ResultSet.zip",
+          "mInternalLocation": "",
+          "mAlgorithm": "",
+          "mLabel": "Data Type",
+          "mName": "ALL",
+          "mChildren": [
+            {
+              "mDownloadableFiles": [],
+              "mLevel": 2,
+              "mDiagramFlag": false,
+              "mZipFile": "",
+              "mInternalLocation": "",
+              "mAlgorithm": "",
+              "mLabel": "Platform",
+              "mName": "DSC-Overview",
+              "mChildren": [
+                {
+                  "mDownloadableFiles": [
+                    "Scores/DSC-Overview/DSCOverview.tsv",
+                    "Scores/SourceDir.txt"
+                  ],
+                  "mLevel": 3,
+                  "mDiagramFlag": true,
+                  "mZipFile": "/BEV_TEST/2016_08_16_1052/ALL/ALL/Scores/ResultSet.zip",
+                  "mInternalLocation": "Scores/DSC-Overview/DSCOverview.tsv",
+                  "mAlgorithm": "DSC",
+                  "mOtherFiles": [],
+                  "mLabel": "Diagram",
+                  "mName": "DSC Scores",
+                  "mChildren": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "mLevel": 0,
+      "mDiagramFlag": false,
+      "mZipFile": "",
+      "mInternalLocation": "",
+      "mAlgorithm": "",
+      "mLabel": "Disease",
+      "mName": "acc",
+      "mChildren": [
+        {
+          "mLevel": 1,
+          "mDiagramFlag": false,
+          "mZipFile": "",
+          "mInternalLocation": "",
+          "mAlgorithm": "",
+          "mLabel": "Data Type",
+          "mName": "methylation",
+          "mChildren": [
+            {
+              "mLevel": 2,
+              "mDiagramFlag": false,
+              "mZipFile": "",
+              "mInternalLocation": "",
+              "mAlgorithm": "",
+              "mLabel": "Platform",
+              "mName": "humanmethylation450 methNOxy",
+              "mChildren": [
+                {
+                  "mLevel": 3,
+                  "mDiagramFlag": false,
+                  "mZipFile": "",
+                  "mInternalLocation": "",
+                  "mAlgorithm": "",
+                  "mLabel": "Data Level",
+                  "mName": "Level 3",
+                  "mChildren": [
+                    {
+                      "mLevel": 4,
+                      "mDiagramFlag": false,
+                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                      "mInternalLocation": "",
+                      "mAlgorithm": "",
+                      "mLabel": "Data Set",
+                      "mName": "All-original",
+                      "mChildren": [
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "BoxPlot",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-Data",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-TSS",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-Type.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-Type.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-Type.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-Type",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-RLE",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-TSS",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-Type.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-Type.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-Type.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-Type",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "Group-MEAN",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-TSS",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "All-original/BatchData.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-Type.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-Type.tsv",
+                                    "All-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-Type.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-Type.tsv",
+                                    "All-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-Type.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-Type",
+                                  "mChildren": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "HierarchicalClustering",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [
+                                "All-original/BatchData.tsv",
+                                "All-original/GeneralAnnotations.tsv",
+                                "All-original/HierarchicalClustering/HCData.tsv",
+                                "All-original/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLevel": 6,
+                              "mDiagramFlag": true,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "All-original/HierarchicalClustering/HCData.tsv",
+                              "mAlgorithm": "HierarchicalClustering",
+                              "mOtherFiles": [
+                                "All-original/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLabel": "Diagram",
+                              "mName": "HCData",
+                              "mChildren": []
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "PCA",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "BatchId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "All-original/BatchData.tsv",
+                                        "All-original/GeneralAnnotations.tsv",
+                                        "All-original/PCA/BatchId/ManyToMany/ANY_DSC.txt",
+                                        "All-original/PCA/BatchId/ManyToMany/ANY_FVE.txt",
+                                        "All-original/PCA/BatchId/ManyToMany/ANY_Scores.txt",
+                                        "All-original/PCA/BatchId/ManyToMany/ANY_Weights.txt",
+                                        "All-original/PCA/BatchId/ManyToMany/PCAAnnotations.tsv",
+                                        "All-original/PCA/BatchId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                      "mInternalLocation": "All-original/PCA/BatchId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "All-original/PCA/BatchId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "PlateId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "All-original/BatchData.tsv",
+                                        "All-original/GeneralAnnotations.tsv",
+                                        "All-original/PCA/PlateId/ManyToMany/ANY_DSC.txt",
+                                        "All-original/PCA/PlateId/ManyToMany/ANY_FVE.txt",
+                                        "All-original/PCA/PlateId/ManyToMany/ANY_Scores.txt",
+                                        "All-original/PCA/PlateId/ManyToMany/ANY_Weights.txt",
+                                        "All-original/PCA/PlateId/ManyToMany/PCAAnnotations.tsv",
+                                        "All-original/PCA/PlateId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                      "mInternalLocation": "All-original/PCA/PlateId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "All-original/PCA/PlateId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "ShipDate",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "All-original/BatchData.tsv",
+                                        "All-original/GeneralAnnotations.tsv",
+                                        "All-original/PCA/ShipDate/ManyToMany/ANY_DSC.txt",
+                                        "All-original/PCA/ShipDate/ManyToMany/ANY_FVE.txt",
+                                        "All-original/PCA/ShipDate/ManyToMany/ANY_Scores.txt",
+                                        "All-original/PCA/ShipDate/ManyToMany/ANY_Weights.txt",
+                                        "All-original/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv",
+                                        "All-original/PCA/ShipDate/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                      "mInternalLocation": "All-original/PCA/ShipDate/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "All-original/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "TSS",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "All-original/BatchData.tsv",
+                                        "All-original/GeneralAnnotations.tsv",
+                                        "All-original/PCA/TSS/ManyToMany/ANY_DSC.txt",
+                                        "All-original/PCA/TSS/ManyToMany/ANY_FVE.txt",
+                                        "All-original/PCA/TSS/ManyToMany/ANY_Scores.txt",
+                                        "All-original/PCA/TSS/ManyToMany/ANY_Weights.txt",
+                                        "All-original/PCA/TSS/ManyToMany/PCAAnnotations.tsv",
+                                        "All-original/PCA/TSS/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                      "mInternalLocation": "All-original/PCA/TSS/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "All-original/PCA/TSS/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "Type",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "All-original/BatchData.tsv",
+                                        "All-original/GeneralAnnotations.tsv",
+                                        "All-original/PCA/Type/ManyToMany/ANY_DSC.txt",
+                                        "All-original/PCA/Type/ManyToMany/ANY_FVE.txt",
+                                        "All-original/PCA/Type/ManyToMany/ANY_Scores.txt",
+                                        "All-original/PCA/Type/ManyToMany/ANY_Weights.txt",
+                                        "All-original/PCA/Type/ManyToMany/PCAAnnotations.tsv",
+                                        "All-original/PCA/Type/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/All-original/ResultSet.zip",
+                                      "mInternalLocation": "All-original/PCA/Type/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "All-original/PCA/Type/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "mLevel": 4,
+                      "mDiagramFlag": false,
+                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                      "mInternalLocation": "",
+                      "mAlgorithm": "",
+                      "mLabel": "Data Set",
+                      "mName": "Tumor-corrected-EBwithParametricPriors-TSS",
+                      "mChildren": [
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "BoxPlot",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-Data",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-RLE",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "Group-MEAN",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "CDP",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [
+                                "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/CDP/CDP_Plot_Data1_Diagram.PNG",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv"
+                              ],
+                              "mLevel": 6,
+                              "mDiagramFlag": true,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/CDP/CDP_Plot_Data1_Diagram.PNG",
+                              "mAlgorithm": "CDP",
+                              "mOtherFiles": [],
+                              "mLabel": "Diagram",
+                              "mName": "CDP Plot Data1 Diagram",
+                              "mChildren": []
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "HierarchicalClustering",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [
+                                "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/HierarchicalClustering/HCData.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLevel": 6,
+                              "mDiagramFlag": true,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/HierarchicalClustering/HCData.tsv",
+                              "mAlgorithm": "HierarchicalClustering",
+                              "mOtherFiles": [
+                                "Tumor-corrected-EBwithParametricPriors-TSS/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLabel": "Diagram",
+                              "mName": "HCData",
+                              "mChildren": []
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "NGCHM",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [
+                                "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                "Tumor-corrected-EBwithParametricPriors-TSS/NGCHM/BatchId_ngchm.ngchm"
+                              ],
+                              "mLevel": 6,
+                              "mDiagramFlag": true,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/NGCHM/BatchId_ngchm.ngchm",
+                              "mAlgorithm": "NGCHM",
+                              "mOtherFiles": [],
+                              "mLabel": "Diagram",
+                              "mName": "BatchId ngchm.ngchm",
+                              "mChildren": []
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "PCA",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "BatchId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/BatchId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "PlateId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/PlateId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "ShipDate",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "TSS",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-corrected-EBwithParametricPriors-TSS/PCA/TSS/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "SupervisedClustering",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "Batches",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/BatchData.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/GeneralAnnotations.tsv",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/SupervisedClustering/Batches/SupervisedClust_Diagram-BatchId.png",
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/SupervisedClustering/Batches/SupervisedClust_Legend-BatchId.png"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-corrected-EBwithParametricPriors-TSS/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-corrected-EBwithParametricPriors-TSS/SupervisedClustering/Batches/SupervisedClust_Diagram-BatchId.png",
+                                  "mAlgorithm": "SupervisedClustering",
+                                  "mOtherFiles": [
+                                    "Tumor-corrected-EBwithParametricPriors-TSS/SupervisedClustering/Batches/SupervisedClust_Legend-BatchId.png"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "SupervisedClust Diagram-BatchId",
+                                  "mChildren": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "mLevel": 4,
+                      "mDiagramFlag": false,
+                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                      "mInternalLocation": "",
+                      "mAlgorithm": "",
+                      "mLabel": "Data Set",
+                      "mName": "Tumor-original",
+                      "mChildren": [
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "BoxPlot",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-Data",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-Data/BoxPlot_AllSample-Data_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-Data BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "AllSample-RLE",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/AllSample-RLE/BoxPlot_AllSample-RLE_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot AllSample-RLE BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "Group-MEAN",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-BatchId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-BatchId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-BatchId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-BatchId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-PlateId.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-PlateId.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-PlateId.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-PlateId",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-ShipDate.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-ShipDate.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-ShipDate.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-ShipDate",
+                                  "mChildren": []
+                                },
+                                {
+                                  "mDownloadableFiles": [
+                                    "Tumor-original/BatchData.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv",
+                                    "Tumor-original/GeneralAnnotations.tsv"
+                                  ],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": true,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_BoxData-TSS.tsv",
+                                  "mAlgorithm": "Boxplot",
+                                  "mOtherFiles": [
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Annotations-TSS.tsv",
+                                    "Tumor-original/BoxPlot/Group-MEAN/BoxPlot_Group-MEAN_Histogram-TSS.tsv"
+                                  ],
+                                  "mLabel": "Diagram",
+                                  "mName": "BoxPlot Group-MEAN BoxData-TSS",
+                                  "mChildren": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "HierarchicalClustering",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [
+                                "Tumor-original/BatchData.tsv",
+                                "Tumor-original/GeneralAnnotations.tsv",
+                                "Tumor-original/HierarchicalClustering/HCData.tsv",
+                                "Tumor-original/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLevel": 6,
+                              "mDiagramFlag": true,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "Tumor-original/HierarchicalClustering/HCData.tsv",
+                              "mAlgorithm": "HierarchicalClustering",
+                              "mOtherFiles": [
+                                "Tumor-original/HierarchicalClustering/HCOrder.tsv"
+                              ],
+                              "mLabel": "Diagram",
+                              "mName": "HCData",
+                              "mChildren": []
+                            }
+                          ]
+                        },
+                        {
+                          "mDownloadableFiles": [],
+                          "mLevel": 5,
+                          "mDiagramFlag": false,
+                          "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                          "mInternalLocation": "",
+                          "mAlgorithm": "",
+                          "mLabel": "Algorithm",
+                          "mName": "PCA",
+                          "mChildren": [
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "BatchId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-original/BatchData.tsv",
+                                        "Tumor-original/GeneralAnnotations.tsv",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-original/PCA/BatchId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-original/PCA/BatchId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-original/PCA/BatchId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "PlateId",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-original/BatchData.tsv",
+                                        "Tumor-original/GeneralAnnotations.tsv",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-original/PCA/PlateId/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-original/PCA/PlateId/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-original/PCA/PlateId/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "ShipDate",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-original/BatchData.tsv",
+                                        "Tumor-original/GeneralAnnotations.tsv",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-original/PCA/ShipDate/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-original/PCA/ShipDate/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "mDownloadableFiles": [],
+                              "mLevel": 6,
+                              "mDiagramFlag": false,
+                              "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                              "mInternalLocation": "",
+                              "mAlgorithm": "",
+                              "mLabel": "Diagram Type",
+                              "mName": "TSS",
+                              "mChildren": [
+                                {
+                                  "mDownloadableFiles": [],
+                                  "mLevel": 7,
+                                  "mDiagramFlag": false,
+                                  "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                  "mInternalLocation": "",
+                                  "mAlgorithm": "",
+                                  "mLabel": "Sub-Type",
+                                  "mName": "ManyToMany",
+                                  "mChildren": [
+                                    {
+                                      "mDownloadableFiles": [
+                                        "Tumor-original/BatchData.tsv",
+                                        "Tumor-original/GeneralAnnotations.tsv",
+                                        "Tumor-original/PCA/TSS/ManyToMany/ANY_DSC.txt",
+                                        "Tumor-original/PCA/TSS/ManyToMany/ANY_FVE.txt",
+                                        "Tumor-original/PCA/TSS/ManyToMany/ANY_Scores.txt",
+                                        "Tumor-original/PCA/TSS/ManyToMany/ANY_Weights.txt",
+                                        "Tumor-original/PCA/TSS/ManyToMany/PCAAnnotations.tsv",
+                                        "Tumor-original/PCA/TSS/ManyToMany/PCAValues.tsv"
+                                      ],
+                                      "mLevel": 8,
+                                      "mDiagramFlag": true,
+                                      "mZipFile": "/BEV_TEST/2016_08_16_1052/acc/methylation/humanmethylation450_methNOxy/Level_3/Tumor-original/ResultSet.zip",
+                                      "mInternalLocation": "Tumor-original/PCA/TSS/ManyToMany/PCAValues.tsv",
+                                      "mAlgorithm": "PCA",
+                                      "mOtherFiles": [
+                                        "Tumor-original/PCA/TSS/ManyToMany/PCAAnnotations.tsv"
+                                      ],
+                                      "mLabel": "Diagram",
+                                      "mName": "PCAValues",
+                                      "mChildren": []
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+	  "mTooltip": "TCGA disease types with extended names are listed \u003ca target\u003d\"_blank\" href\u003d\"https://tcga-data.nci.nih.gov/docs/publications/tcga/\"\u003ehere\u003c/a\u003e."
+    }
+  ],
+  "mTooltip": ""
+}

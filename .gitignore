@@ -1,0 +1,8 @@
+apps/*/build
+apps/*/dist
+apps/*/nbproject/private
+apps/*/.Rproj.user
+apps/*/.Rbuildignore
+apps/*/.Rhistory
+apps/*/target
+.Rproj.user

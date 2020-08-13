@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script src="Title.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function loadGoogleAnalytics(trackingID)
+			{
+				var gaScript = document.createElement('script');
+				gaScript.setAttribute('async', 'true');
+				gaScript.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${ trackingID }`);
+
+				var gaScript2 = document.createElement('script');
+				gaScript2.innerText = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date());gtag(\'config\', \'${ trackingID }\');`;
+
+				document.documentElement.firstChild.appendChild(gaScript);
+				document.documentElement.firstChild.appendChild(gaScript2);
+			};
+
+			// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+			var globalGtagId = getGtagId();
+			loadGoogleAnalytics(globalGtagId);
+		</script>
+		<title>Batch Effects Viewer</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="lib/modernizr-use.js"></script>
+		<script type="text/javascript">
+			Modernizr.on('arrow', function(result) { if (result) { console.log("has arrow");} else { document.location.href = "bev_error.html"; }});
+			try 
+			{ 
+				eval("async function f() { let promise = new Promise((resolve, reject) => { setTimeout(() => resolve('done!'), 10) }); let result = await promise; } f();"); 
+				console.log("async good");
+			} 
+			catch (e) 
+			{
+				document.location.href = "bev_error.html";
+			}
+		</script>
+		<!-- **** icons **** -->
+		<!-- all tag attributes (src, type, rel) are required for proper generation of standalone file BEV_AppGenerator.java -->
+		<link href="fa5/css/all.css" rel="stylesheet" type="text/css">
+		<!-- **** CSS Entries **** -->
+		<!-- all tag attributes (src, type, rel) are required for proper generation of standalone file BEV_AppGenerator.java -->
+		<link href="lib/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css">
+		<link href="lib/DataTables/DataTables-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+		<link href="bev_basic.css" rel="stylesheet" type="text/css">
+		<link href="GraphAPI/HC/GraphAPI_HC.css" rel="stylesheet" type="text/css">
+		<link href="GraphAPI/PCA/GraphAPI_PCA.css" rel="stylesheet" type="text/css">
+		<link href="GraphAPI/BP/boxplot_internal_styles.css" rel="stylesheet" type="text/css">
+		<link href="GraphAPI/BP/boxplot_styles.css" rel="stylesheet" type="text/css">
+		<link href="GraphAPI/BP/scrollbar_styles.css" rel="stylesheet" type="text/css">
+		<!-- **** JavaScript Entries **** -->
+		<!-- all tag attributes (src, type, charset) are required for proper generation of standalone file BEV_AppGenerator.java -->
+		<script src="lib/knockout-3.5.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/papaparse.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/d3.3.5.15.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/PCA/risk-gradient.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/PCA/pca-plot.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/boxplot_detailed.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/boxplot_inner.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/d3plus-text.v0.9.full.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/boxplot_outer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/boxplot_pixels.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/boxplot_scrollbar.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/BP/bea_boxplot.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/HC/hierclust-plot.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/HC/matchColors.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/DSC/bea_dsc.js" type="text/javascript" charset="utf-8"></script>
+		<script src="GraphAPI/plot-lib-utils.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/queue.v1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-3.5.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DataAccess.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DataAccess_http.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DataAccess_file.js" type="text/javascript" charset="utf-8"></script>
+		<script src="DiagramControl.js" type="text/javascript" charset="utf-8"></script>
+		<script src="UtilBoxplot.js" type="text/javascript" charset="utf-8"></script>
+		<script src="UtilPca.js" type="text/javascript" charset="utf-8"></script>
+		<script src="UtilHierClust.js" type="text/javascript" charset="utf-8"></script>
+		<script src="UtilDsc.js" type="text/javascript" charset="utf-8"></script>
+		<script src="UtilNgchm.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bev_resize.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jszip.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="BEVAppView.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/* global ko */
+
+			// this makes sure that nothing gets called until page and required JS files are loaded
+			var appview = null;
+			var globalAppName = getBEVtitle();
+			// actually parses URL
+			var globalDataAccess = new DataAccess();
+			var bevUrl = window.location.origin + window.location.pathname;
+			var globalDiagramControl = new DiagramControl(globalDataAccess, "BEVDisplay_Diagram", "BEVDisplay_Legend_Content", "BEVDisplay_Datapane_Content", bevUrl);
+			$(document).ready(function()
+			{
+				// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+				// handles URL containing link to specific dataset and diagram
+				// see DataAccess for URL processing
+				appview = new BEVAppView();
+				// Activates knockout.js
+				ko.applyBindings(appview);
+				// theDataAccess, theDiagramId, theLegendId, theDatapaneId
+				console.log(appview.algorithmOptions());
+				// setup burger menu dialog
+				$("#BurgerContent").dialog(
+				{
+					// do not use transitions
+					// they make the page no longer fit
+					// and you cannot open the dialog again
+					autoOpen: false
+				});
+				$("#BurgerImage").click(function ()
+				{
+					$("#BurgerContent").dialog("option", "position", 
+					{
+						my: "right top",
+						at: "left bottom",
+						of: this // this is clicked element
+					}).dialog("open");
+				});
+				// other setup
+				$( "#dbtabs" ).tabs();
+				$( '#databrowserFileInput' ).on("change", function(theEvent)
+				{
+					console.log("event call");
+					processZipSelectEvent(theEvent);
+				});
+				// resize before showing popup, to prevent d3 plotting weirdly partly off the page
+				bodyResize();
+				document.getElementById('alrt').style.display = "block";
+				setTimeout(function() {document.getElementById('alrt').style.display = "none";},3000);
+			});
+			
+		</script>
+	</head>
+	<body class="body-wrapper" onresize="bodyResize();" style="display: none;" data-bind="visible: $root.makeGuiVisible()">
+		<div id='alrt' style="display: none;">
+			<p onclick="document.getElementById('alrt').style.display = 'none';"><small>Legal notice: Unauthorized access to the network is prohibited. This system is for the use of authorized users only. 
+				Individuals using this computer system without authority, or in excess of their authority, are subject to having all of 
+				their activities on this system monitored and recorded by system personnel. In the course of monitoring individuals 
+				improperly using this system, or in the course of system maintenance, the activities of authorized users may also be 
+				monitored. Anyone using this system expressly consents to such monitoring and is advised that if such monitoring reveals 
+				possible evidence of criminal activity, system personnel may provide the evidence of such monitoring to law enforcement officials.
+				(Auto-displayed notice will close after 3 seconds or click this banner to hide.)</small>
+			</p>
+		</div>
+		<div class="div-wrapper" id="id-div-wrapper">
+			<div class="div-header">
+				<div class="bevServiceHeader">
+					<a href="https://bioinformatics.mdanderson.org/public-software/tcga-batch-effects/" target="_blank"><img class="bevServiceHeaderLogo" src="images/mdandersonlogo300x54.png" alt="MDA Logo"></a>
+					<!-- put cut and paste inputs here, to avoid DOM mangling by tippy -->
+					<div class="bevServiceHeaderTitle">&nbsp;&nbsp;<span class="bevTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-07-20-1100</small></div>
+					<div class="bevHeaderLinks">
+						<img id="BurgerImage" title="Menu Options" src="images/hamburger_icon.png" alt="Menu Options">
+						<div id="BurgerContent" title="Menu Options">
+							<strong>Standardized Data and Batch Effects</strong><br>
+							<a data-bind="attr: { href: $root.urlQueryForm(), title: 'Go to Batch Effects Viewer Query Form' }" target="_blank"><small>Go to Batch Effects Viewer Query Form</small><br></a>
+							<a data-bind="attr: { href: $root.urlStdData(), title: 'Go to Standardized Data' }" target="_blank"><small>Go to Standardized Data</small><br></a>
+							<strong>Stand Alone Batch Effects Viewer</strong><br>
+							<a href="bevApp.html" download="BatchEffectsViewer.html"><small>Download Stand Alone Viewer</small></a><br>
+							<strong>Documentation</strong><br>
+							<a href="https://bioinformatics.mdanderson.org/public-software/tcga-batch-effects/" target="_blank"><small>Usage</small></a><br>
+							<a href="MBatch_04-99_Statistics.html" target="_blank"><small>MBatch Statistics</small></a><br>
+							<a href="" onclick="document.getElementById('alrt').style.display = 'block'; return false;">Legal Notice</a><br>
+							<a href="https://github.com/MD-Anderson-Bioinformatics/" target="_blank"><small>GitHub</small></a><br>
+							<strong>About</strong><br>
+							<a href="https://bioinformatics.mdanderson.org" target="_blank"><small>About BCB at MD Anderson</small></a><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="div-data-browser" id="BEV_DataBrowser">
+				<div class="div-data-browser-title">
+					<span>Data Browser</span>
+					<span style="float: right;" class="bev-control-button">
+						<i onclick="hideDataBrowser(); globalDiagramControl.resize(); return false;" 
+								 class="fas fa-minus-square bev-control-button" style="font-size: 10px;"></i>
+						Hide
+					</span>
+				</div>
+				<div class="div-databrowser-file" style="display: none;" data-bind="visible: $root.protocol() === 'file:'">
+					<input id="databrowserFileInput" type="file" name="databrowserFileInput" />
+				</div>
+				<div class="div-data-browser-content">
+					<div id="dbtabs">
+						<ul class="dataBrowserTabText">
+							<li class="dataBrowserTabText"><a class="dataBrowserTabText" href="#dbtab-1">Analysis Results</a></li>
+							<li class="dataBrowserTabText"><a class="dataBrowserTabText" href="#dbtab-2">Dataset Details</a></li>
+						</ul>
+						<table class="mdaCompactTable" id="dbtab-1">
+							<tbody>
+								<tr>
+									<td><span data-bind="text: $root.algorithmLabel()"></span></td>
+									<td><select data-bind="options: $root.algorithmOptions, optionsText: 'entry_label', value: $root.algorithmSelected"></select></td>
+								</tr>
+								<tr style="display: none;" data-bind="visible: (null !== $root.level1Label())">
+									<td><span data-bind="text: $root.level1Label()"></span></td>
+									<td><select data-bind="options: $root.level1Options, optionsText: 'entry_label', value: $root.level1Selected"></select></td>
+								</tr>
+								<tr style="display: none;" data-bind="visible: (null !== $root.level2Label())">
+									<td><span data-bind="text: $root.level2Label()"></span></td>
+									<td><select data-bind="options: $root.level2Options, optionsText: 'entry_label', value: $root.level2Selected"></select></td>
+								</tr>
+							</tbody>
+						</table>
+						<table class="mdaCompactTable" id="dbtab-2">
+							<tbody>
+								<tr><td>BEV ID</td><td><span data-bind="text: $root.requestedId()"></span></td></tr>
+								<tr><td>Source ID</td><td><span data-bind="text: $root.indexSourceID()"></span></td></tr>
+								<tr><td>Source</td><td><span data-bind="text: $root.indexSource()"></span></td></tr>
+								<tr><td>Derivation</td><td><span data-bind="text: $root.indexVariant()"></span></td></tr>
+								<tr><td>Project</td><td><span data-bind="text: $root.indexProject()"></span></td></tr>
+								<tr><td>Sub-Project</td><td><span data-bind="text: $root.indexSubProject()"></span></td></tr>
+								<tr><td>Category</td><td><span data-bind="text: $root.indexCategory()"></span></td></tr>
+								<tr><td>Platform</td><td><span data-bind="text: $root.indexPlatform()"></span></td></tr>
+								<tr><td>Data</td><td><span data-bind="text: $root.indexData()"></span></td></tr>
+								<tr><td>Algorithm</td><td><span data-bind="text: $root.indexAlgorithm()"></span></td></tr>
+								<tr><td>Details</td><td><span data-bind="text: $root.indexDetails()"></span></td></tr>
+								<tr><td>Version</td><td><span data-bind="text: $root.indexVersion()"></span></td></tr>
+								<tr><td>MBatch ID</td><td><span data-bind="text: $root.indexMbatchMBatchID()"></span></td></tr>
+								<tr><td>MBatch Run</td><td><span data-bind="text: $root.indexMbatchMBatchRun()"></span></td></tr>
+								<tr><td>Dataset Type</td><td><span data-bind="text: $root.indexMbatchMBatchDatasetType()"></span></td></tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="div-a-b-drag-bar" id="id-a-b-drag-bar" onmousedown="onMouseDownColAB(event);"></div>
+			<div class="div-diagram-viewer" id="BEV_Diagram">
+				<div class="div-diagram-viewer-title">
+					<span>Data Viewer</span>
+					<span class="showDVButtons">
+						&nbsp;
+						<span class="bevQfButton" id="BEV_DataBrowserbutton">
+							<i onclick="displayDataBrowser(); globalDiagramControl.resize(); return false;" 
+								 class="fas fa-plus-square bev-control-button" style="font-size: 10px;"></i>
+							Data Browser
+						</span>
+						&nbsp;
+						<span class="bevLpButton" id="BEV_LegPaneButton">
+							<i onclick="displayLegPaneColumn(); globalDiagramControl.resize(); return false;" 
+								 class="fas fa-plus-square bev-control-button" style="font-size: 10px;"></i>
+							Legend/Datapane
+						</span>
+					</span>
+				</div>
+				<div class="div-diagram-viewer-control">
+					&nbsp;
+					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.newTabUrl())">
+						<a target="_blank" data-bind="attr: { href: newTabUrl(), title: 'Open in new tab. Right click to copy URL.' }">
+							<i class="fas fa-external-link-alt" style="font-size: 10px; color: blue;"></i></a>
+						Open Diagram in New Tab
+					</span>
+					&nbsp;
+					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.requestedId())">
+						<a data-bind="attr: { href: 'dszip?id='+ $root.requestedId(), title: 'Download results, includes corrected data if pertinent. Right click to copy URL.' }"><i class="fas fa-download" style="font-size: 10px; color: red;"></i></a>
+						Download MBatch Archive
+					</span>
+					&nbsp;
+					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.urlStdData())">
+						<span class="bev-control-button" data-bind="if: $root.checkIndexForValue('source', 'GDC')">
+							<a data-bind="attr: { href: $root.urlStdData() + '/download?id='+ 
+							encodeURIComponent(getWithCheck($root.jsonIndex(), 'source', null).toLowerCase() + '-' + 
+								getWithCheck($root.jsonIndex(), 'SourceID', null)), title: 'Download original data. Right click to copy URL.' }" ><i class="fas fa-download" style="font-size: 10px; color: firebrick;"></i></a>
+								<span class="bev-control-button">Download Standardized Data</span>
+						</span>
+					</span>
+				</div>
+				<div class="div-diagram-viewer-content" id="BEVDisplay_Diagram"></div>
+			</div>
+			<div class="div-b-c-drag-bar" id="id-b-c-drag-bar" onmousedown="onMouseDownColBC(event);"></div>
+			<div class="div-legpane" id="BEV_LegPane" >
+				<div class="div-legend" id="BEVDisplay_Legend">
+					<div class="div-legend-title">
+						<span>Legend</span>
+						<span style="float: right;" class="bev-control-button">
+							<i onclick="hideLegPaneColumn(); globalDiagramControl.resize(); return false;" 
+								 class="fas fa-minus-square bev-control-button" style="font-size: 10px;"></i>
+							Hide
+						</span>
+					</div>
+					<div class="div-legend-content" id="BEVDisplay_Legend_Content"></div>
+				</div>
+				<div class="div-l-p-drag-bar" id="id-l-p-drag-bar" onmousedown="onMouseDownRowAB(event);"></div>
+				<div class="div-datapane" id="BEVDisplay_Datapane">
+					<div class="div-datapane-title"><span>Datapane</span></div>
+					<div class="div-datapane-control">
+						<span id="DPCopyAllButton" class="controlButton" onclick="bevDatapaneCopyAll(); return false;">
+							<span class="fa-stack fa-lg controlButtonIcon">
+								<i class="fas fa-copy fa-stack-1x controlButtonIcon" style="color:blue;"></i>
+								<i class="far fa-copy fa-stack-1x controlButtonIcon" style="color:black;"></i>
+							</span>
+							<span class="controlButtonLabel">Copy All</span>
+						</span>
+						<span id="DPClearButton" class="controlButton" onclick="bevDatapaneClear(); return false;">
+							<span class="fa-stack fa-lg controlButtonIcon">
+								<i class="fas fa-eraser fa-stack-1x controlButtonIcon" style="color:deeppink;"></i>
+							</span>
+							<span class="controlButtonLabel">Clear</span>
+						</span>
+					</div>
+					<div class="div-datapane-content" id="BEVDisplay_Datapane_Content"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<!-- the ngchmWidget JS file does "magic" when loaded, adding stuff to the DOM on source -->
+	<!-- in stand-alone mode, "defer" is not usable, so also put this at end of file -->
+	<!-- TODO: Get InSilico to fix this. NGCHM plugin should work like D3 plugins, with a class that is instantiated -->
+	<script src="lib/ngchmWidget-min.js" type="text/javascript" charset="utf-8" defer></script>
+</html>
