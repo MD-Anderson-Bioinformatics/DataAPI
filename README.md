@@ -40,13 +40,16 @@ https://datatables.net/
 
 ## Install DAPIR
 DAPIR has been tested with Java 8 and R 3.6 series.
+```R
     # required CRAN packages (devtools for install, httr for HTTP processing)
     install.packages(c("devtools", "httr"), dependencies=TRUE, repos = "http://cloud.r-project.org/")
     ## install package
     devtools::install_github("MD-Anderson-Bioinformatics/DataAPI/apps/DAPIR")
+```
 
 ## Sample R Code for DAPIR
 Used to mirror Standardized Data locally.
+```R
     # TCGA ACC query string from website
     queryFromSite <- "{\"mFiles\":[],\"mSources\":[],\"mVariants\":[\"current\"],\"mProjects\":[\"TCGA\"],\"mSubprojects\":[\"TCGA-ACC\"],\"mCategories\":[],\"mPlatforms\":[],\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],\"mVersions\":[]}"
     # temp directory
@@ -60,7 +63,7 @@ Used to mirror Standardized Data locally.
     # Download initial datasets
     newDatasets <- results$NEW
     downloadData(newDatasets, datasetDir)
-
+```
 
 ## Quick Start with Docker:
 
