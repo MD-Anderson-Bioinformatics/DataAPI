@@ -25,17 +25,22 @@ import javax.servlet.annotation.WebListener;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebListener
 public class LoadIndexFiles implements ServletContextListener
 {
+//	static public String M_INDEX_FILES = "/BEV/INDEXES";
+//	static public String M_DSC_INDEX_FILES = "/BEV/DSC_INDEXES";
+//	static public String M_DATA_FILES = "/BEV/DATA";
+//	static public String M_CONFIG_PROP = "/BEV/CONFIG/dapi.properties";
+//	static public String M_CONFIG_FILTER = "/BEV/CONFIG/dapi-filter.tsv";
 	static public String M_INDEX_FILES = "/DAPI/INDEXES";
 	static public String M_DSC_INDEX_FILES = "/DAPI/DSC_INDEXES";
 	static public String M_DATA_FILES = "/DAPI/DATA";
 	static public String M_CONFIG_PROP = "/DAPI/CONFIG/dapi.properties";
 	static public String M_CONFIG_FILTER = "/DAPI/CONFIG/dapi-filter.tsv";
-	static public String M_VERSION = "DAPI 2020-07-20-1100";
+	static public String M_VERSION = "DAPI 2020-09-11-1000";
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce)

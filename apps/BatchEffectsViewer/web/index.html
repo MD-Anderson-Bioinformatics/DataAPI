@@ -83,6 +83,10 @@
 		<script src="lib/DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="bev_resize.js" type="text/javascript" charset="utf-8"></script>
 		<script src="lib/jszip.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- based on https://alafr.github.io/SVG-to-PDFKit/examples/demo.htm -->
+		<script src="lib/alafr/blobstream.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/alafr/pdfkit.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/alafr/svgToPdfkit.js" type="text/javascript" charset="utf-8"></script>
 		<script src="BEVAppView.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			/* global ko */
@@ -103,7 +107,7 @@
 				// Activates knockout.js
 				ko.applyBindings(appview);
 				// theDataAccess, theDiagramId, theLegendId, theDatapaneId
-				console.log(appview.algorithmOptions());
+				//console.log(appview.algorithmOptions());
 				// setup burger menu dialog
 				$("#BurgerContent").dialog(
 				{
@@ -152,19 +156,24 @@
 				<div class="bevServiceHeader">
 					<a href="https://bioinformatics.mdanderson.org/public-software/tcga-batch-effects/" target="_blank"><img class="bevServiceHeaderLogo" src="images/mdandersonlogo300x54.png" alt="MDA Logo"></a>
 					<!-- put cut and paste inputs here, to avoid DOM mangling by tippy -->
-					<div class="bevServiceHeaderTitle">&nbsp;&nbsp;<span class="bevTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-07-20-1100</small></div>
+					<div class="bevServiceHeaderTitle">&nbsp;&nbsp;<span class="bevTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-09-11-1000</small></div>
 					<div class="bevHeaderLinks">
 						<img id="BurgerImage" title="Menu Options" src="images/hamburger_icon.png" alt="Menu Options">
 						<div id="BurgerContent" title="Menu Options">
 							<strong>Standardized Data and Batch Effects</strong><br>
-							<a data-bind="attr: { href: $root.urlQueryForm(), title: 'Go to Batch Effects Viewer Query Form' }" target="_blank"><small>Go to Batch Effects Viewer Query Form</small><br></a>
-							<a data-bind="attr: { href: $root.urlStdData(), title: 'Go to Standardized Data' }" target="_blank"><small>Go to Standardized Data</small><br></a>
+							<a href="https://bioinformatics.mdanderson.org/main/TCGABatchEffects:Overview" target="_blank"><small>Batch Effects Overview and Interpretation</small><br></a>
+							<span data-bind="visible: $root.urlQueryForm() !== ''">
+								<a data-bind="attr: { href: $root.urlQueryForm(), title: 'Go to Batch Effects Viewer Query Form' }" target="_blank"><small>Go to Batch Effects Viewer Query Form</small><br></a>
+							</span>
+							<span data-bind="visible: $root.urlStdData() !== ''">
+								<a data-bind="attr: { href: $root.urlStdData(), title: 'Go to Standardized Data' }" target="_blank"><small>Go to Standardized Data</small><br></a>
+							</span>
 							<strong>Stand Alone Batch Effects Viewer</strong><br>
 							<a href="bevApp.html" download="BatchEffectsViewer.html"><small>Download Stand Alone Viewer</small></a><br>
 							<strong>Documentation</strong><br>
 							<a href="https://bioinformatics.mdanderson.org/public-software/tcga-batch-effects/" target="_blank"><small>Usage</small></a><br>
 							<a href="MBatch_04-99_Statistics.html" target="_blank"><small>MBatch Statistics</small></a><br>
-							<a href="" onclick="document.getElementById('alrt').style.display = 'block'; return false;">Legal Notice</a><br>
+							<a href="" onclick="document.getElementById('alrt').style.display = 'block'; return false;"><small>Legal Notice</small></a><br>
 							<a href="https://github.com/MD-Anderson-Bioinformatics/" target="_blank"><small>GitHub</small></a><br>
 							<strong>About</strong><br>
 							<a href="https://bioinformatics.mdanderson.org" target="_blank"><small>About BCB at MD Anderson</small></a><br>
@@ -248,25 +257,39 @@
 					</span>
 				</div>
 				<div class="div-diagram-viewer-control">
-					&nbsp;
 					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.newTabUrl())">
+						&nbsp;
 						<a target="_blank" data-bind="attr: { href: newTabUrl(), title: 'Open in new tab. Right click to copy URL.' }">
 							<i class="fas fa-external-link-alt" style="font-size: 10px; color: blue;"></i></a>
 						Open Diagram in New Tab
 					</span>
-					&nbsp;
 					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.requestedId())">
+						&nbsp;
 						<a data-bind="attr: { href: 'dszip?id='+ $root.requestedId(), title: 'Download results, includes corrected data if pertinent. Right click to copy URL.' }"><i class="fas fa-download" style="font-size: 10px; color: red;"></i></a>
 						Download MBatch Archive
 					</span>
-					&nbsp;
-					<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.urlStdData())">
-						<span class="bev-control-button" data-bind="if: $root.checkIndexForValue('source', 'GDC')">
-							<a data-bind="attr: { href: $root.urlStdData() + '/download?id='+ 
-							encodeURIComponent(getWithCheck($root.jsonIndex(), 'source', null).toLowerCase() + '-' + 
-								getWithCheck($root.jsonIndex(), 'SourceID', null)), title: 'Download original data. Right click to copy URL.' }" ><i class="fas fa-download" style="font-size: 10px; color: firebrick;"></i></a>
-								<span class="bev-control-button">Download Standardized Data</span>
+					<span data-bind="visible: $root.urlStdData() !== ''">
+						<span class="bev-control-button" style="display: none;" data-bind="visible: (null !== $root.urlStdData())">
+							&nbsp;
+							<span class="bev-control-button" data-bind="if: $root.checkIndexForValue('source', 'GDC')">
+								<a data-bind="attr: { href: $root.urlStdData() + '/download?id='+ 
+								encodeURIComponent(getWithCheck($root.jsonIndex(), 'source', null).toLowerCase() + '-' + 
+									getWithCheck($root.jsonIndex(), 'SourceID', null)), title: 'Download original data. Right click to copy URL.' }" ><i class="fas fa-download" style="font-size: 10px; color: firebrick;"></i></a>
+									<span class="bev-control-button">Download Standardized Data</span>
+							</span>
 						</span>
+					</span>
+					<span class="bev-control-button" id="BEV_ToggleFitButton" data-bind="visible: $root.isPngDiagram()">
+						&nbsp;
+						<i onclick="globalDiagramControl.toggleImgFit(); return false;" 
+							 class="fas fa-expand-arrows-alt" style="font-size: 10px; color: seagreen;"></i>
+						Toggle Fit
+					</span>
+					<span class="bev-control-button" id="BEV_SaveAsPDFButton" data-bind="visible: supportsPdf($root.algorithmSelected)">
+						&nbsp;
+						<i onclick="globalDiagramControl.saveAsPdf(); return false;" 
+							 class="fas fa-file-download" style="font-size: 10px; color: royalblue;"></i>
+						Save PDF
 					</span>
 				</div>
 				<div class="div-diagram-viewer-content" id="BEVDisplay_Diagram"></div>
@@ -306,9 +329,11 @@
 				</div>
 			</div>
 		</div>
+		<!-- see DiagramControl.js SVG to PDF code -->
+		<div style="display: none;" id="renderSvgForPrinting"></div>
 	</body>
 	<!-- the ngchmWidget JS file does "magic" when loaded, adding stuff to the DOM on source -->
 	<!-- in stand-alone mode, "defer" is not usable, so also put this at end of file -->
 	<!-- TODO: Get InSilico to fix this. NGCHM plugin should work like D3 plugins, with a class that is instantiated -->
 	<script src="lib/ngchmWidget-min.js" type="text/javascript" charset="utf-8" defer></script>
-</html>
+ </html>

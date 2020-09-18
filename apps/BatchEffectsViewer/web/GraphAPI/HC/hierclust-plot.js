@@ -8,6 +8,8 @@
  */
 
 
+/* global d3 */
+
 //HierClustPlot = {version: "0.2"};
 
 //function HierClustPlot (inputData, domNode, showDetailFunc, plotAnnotation)
@@ -15,7 +17,6 @@
 
 function HierClustPlot (model, domNode, params)
 {
-
 	var	svg = null,
 		dendroPanel = null,
 		barsPanel = null,
@@ -199,7 +200,7 @@ function HierClustPlot (model, domNode, params)
 
 	function doMakeDendro (thing)	// thing is either node or leaf
 	{
-		if (thing.type == "Node") {
+		if (thing.type === "Node") {
 			doMakeDendro (thing.left);
 			doMakeDendro (thing.right);
 		//	console.log ("Connect at height " + thing.height);
@@ -245,7 +246,7 @@ function HierClustPlot (model, domNode, params)
 		bars.enter().append("svg:g")
 			.attr("class", "covar")
 			.attr("name", function (d) { return d; })
-			.attr("transform", function(d, i) { return "translate(0," + (i * barHeight) + ")"; })
+			.attr("transform", function(d, i) { return "translate(0," + (i * barHeight) + ")"; });
 
 		bars.exit().remove();
 
@@ -287,7 +288,7 @@ function HierClustPlot (model, domNode, params)
 				clearBarLabelHilite();
 				clearLegendHilite();
 				sampleHilited = null;
-				})
+				});
 
 		cells.exit().remove();
 
@@ -326,7 +327,7 @@ function HierClustPlot (model, domNode, params)
 
 		var	r = [];
 		leaves.forEach (function (sample) {
-			if (sample.covars[d.covar] == d.value) r.push (sample.order);
+			if (sample.covars[d.covar] === d.value) r.push (sample.order);
 			});
 
 			// Get the group containing the whole bar
@@ -352,7 +353,7 @@ function HierClustPlot (model, domNode, params)
 
 		hilites
 			.attr("cx", function(d) { return hScale(d) + halfWidth; })	// ### ???
-			.attr("cy", halfHeight)
+			.attr("cy", halfHeight);
 
 		hilites.exit().remove();
 
@@ -400,7 +401,7 @@ function HierClustPlot (model, domNode, params)
 
 		myzoom = d3.behavior.zoom()
 					.x(hScale)
-					.scaleExtent([1, Infinity])
+					.scaleExtent([1, Number.POSITIVE_INFINITY])
 					.on("zoom", function () {
 									clearHiliteSimilarSamples();
 									redraw (); });
@@ -471,7 +472,7 @@ function HierClustPlot (model, domNode, params)
 		svg.append("g")
 			.attr("class", "HiliteTicks");
 
-		if (plotAnnotation !== undefined && plotAnnotation != null) {
+		if (plotAnnotation !== undefined && plotAnnotation !== null) {
 			svg.append("svg:text")
 				.attr("class", "plotfootnote")
 				.style("text-anchor", "end")
@@ -628,7 +629,7 @@ function HierClustPlot (model, domNode, params)
 
 	function _makeLegend (covar, div) {
 
-		var callerSuppliedDiv = (div != undefined && div != null);
+		var callerSuppliedDiv = (div !== undefined && div !== null);
 
 		if (!callerSuppliedDiv) {
 			div = document.createElement('div');
@@ -706,7 +707,7 @@ function HierClustPlot (model, domNode, params)
 
 	function findAndHiliteLegend (covarName, batchName) {
 
-		if (legendNode != null) {
+		if (legendNode !== null) {
 			var theGroup = legendNode.selectAll ("g.legenditem[covar-val=\"" + batchName + "\"]");
 
 			if (! theGroup.empty()) {
@@ -726,7 +727,7 @@ function HierClustPlot (model, domNode, params)
 
 
 	function clearLegendHilite () {
-		if (legendNode != null) {
+		if (legendNode !== null) {
 			legendNode.selectAll ("rect.legendhilite").remove();
 		}
 	}
@@ -757,7 +758,7 @@ function HierClustPlot (model, domNode, params)
 		// ### Next round, move these duplicates out
 	function findCSS (cssName) {
 		var sheets = window.document.styleSheets;
-		for (cur in sheets) {
+		for (var cur in sheets) {
 			if (sheets.hasOwnProperty(cur)) {
 				if (sheets[cur].href.endsWith(cssName)) {
 					return sheets[cur];
@@ -772,7 +773,7 @@ function HierClustPlot (model, domNode, params)
 		var	sheet = findCSS (cssName);
 		if (sheet !== null) {
 			var rulesList = sheet.rules;	// a CSSRuleList
-			for (ruleKey in rulesList) {
+			for (var ruleKey in rulesList) {
 				if (rulesList.hasOwnProperty(ruleKey)) {
 					var rule = rulesList[ruleKey].cssText;
 					result += rule + '\n';
@@ -787,9 +788,12 @@ function HierClustPlot (model, domNode, params)
 	// Find a more principled way of handling stylesheet settings
 	function _makeHeader() {
 		// Package the image itself
-		var header = '<?xml version="1.0" standalone="no"?>';
-		header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
-		header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
+
+		header = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
+		
+		//var header = '<?xml version="1.0" standalone="no"?>';
+		//header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
+		//header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
 
 		// Embedded stylesheet settings
 		var	rules = getCssAsText ('GraphAPI_HC.css');
@@ -819,11 +823,15 @@ function HierClustPlot (model, domNode, params)
 
 
 	function _getLegendSVGContent (covarName) {
-		var	legend = d3.select ("svg.batchlegend[covar-name=\"" + covarName + "\"]");
-		if (! legend.empty()) {
+		var	legend = d3.select("svg.batchlegend[covar-name=\"" + covarName + "\"]");
+		if (! legend.empty())
+		{
 			var legendNode = legend.node();
-			return _makeHeader() + legendNode.innerHTML + _makeFooter();	
-		}else{
+			// user other to get SVG entry
+			return _makeHeader() + legendNode.outerHTML + _makeFooter();	
+		}
+		else
+		{
 			return "";
 		}
 	}
@@ -840,18 +848,17 @@ function HierClustPlot (model, domNode, params)
 
 	function _plotOptions (newOptions) {
 		var	result;
-
-		if (newOptions == null)
+		if ((newOptions === null)||(newOptions === undefined))
 			result = {};
 		else {
 			result = newOptions;
 
 			// check for need to redraw ###
 			for (var fld in installedOptions)
-				if (newOptions[fld] != undefined)
+				if (newOptions[fld] !== undefined)
 					installedOptions[fld] = newOptions[fld];
 
-			//if (newOptions["formatString"] != undefined)
+			//if (newOptions["formatString"] !== undefined)
 			//	fixedFormatter = d3.format (installedOptions["formatString"]);
 		}
 
@@ -861,26 +868,16 @@ function HierClustPlot (model, domNode, params)
 		return (result);
 	}
 
-//	function plot () {}
-//	plot.resizePlot = _resizePlot;
-//	plot.resetScale = _resetScale;
-//	plot.plotOptions = _plotOptions;
-//	plot.makeLegend = _makeLegend;
-//	plot.getGroupVariables = _getGroupVariables;
-//	plot.getSVGContent = _getSVGContent;
-//	plot.getLegendSVGContent = _getLegendSVGContent;
-//	return plot;
-
-
-	// TODO: fix hack: not sure what plot(){} is for above
-	this.resizePlot = _resizePlot;
-	this.resetScale = _resetScale;
-	this.plotOptions = _plotOptions;
-	this.makeLegend = _makeLegend;
-	this.getGroupVariables = _getGroupVariables;
-	this.getSVGContent = _getSVGContent;
-	this.getLegendSVGContent = _getLegendSVGContent;
-	return this;
+	// TODO: convert to class to fix hack of using plot for "class"
+	function plot () {}
+	plot.resizePlot = _resizePlot;
+	plot.resetScale = _resetScale;
+	plot.plotOptions = _plotOptions;
+	plot.makeLegend = _makeLegend;
+	plot.getGroupVariables = _getGroupVariables;
+	plot.getSVGContent = _getSVGContent;
+	plot.getLegendSVGContent = _getLegendSVGContent;
+	return plot;
 } // function HierClustPlot
 
 
@@ -888,12 +885,12 @@ HierClustPlot.BasicModel = function (samples, rows, orders) {
 
 	function model () {}
 		// copy these instead of returning direct refs? ###
-	model.getSamples = function () { return samples; }
-	model.getRows = function () { return rows; }
-	model.getOrders = function () { return orders; }
+	model.getSamples = function () { return samples; };
+	model.getRows = function () { return rows; };
+	model.getOrders = function () { return orders; };
 
 	return model;
-}
+};
 
 
 HierClustPlot.DefaultParams = function () {
@@ -901,4 +898,4 @@ HierClustPlot.DefaultParams = function () {
 		showDetailFunc : null,
 		plotAnnotation : 'Annotation'
 	};
-}
+};

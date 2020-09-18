@@ -12,24 +12,20 @@
 package edu.mda.bcb.bev.servlets;
 
 import edu.mda.bcb.bev.indexes.Indexes;
-import edu.mda.bcb.bev.query.Dataset;
-import edu.mda.bcb.bev.util.ZipUtil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.compress.utils.IOUtils;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "dszip", urlPatterns =
 {
@@ -56,12 +52,12 @@ public class dszip extends HttpServlet
 			this.log("dsblob: get ds zip");
 			String id = request.getParameter("id");
 			Indexes myIndexes = (Indexes)(this.getServletContext().getAttribute("INDEXES"));
-			Dataset ds = myIndexes.getDataset(id);
-			String zipPath = ds.mPath;
-			response.setHeader("Content-Disposition", "attachment; filename=\"" + new File(zipPath).getName() + "\"");
+			File zipPath = myIndexes.getZipPath(id);
+			this.log("dstext: dsblob = " + zipPath.getAbsolutePath());
+			response.setHeader("Content-Disposition", "attachment; filename=\"" + zipPath.getName() + "\"");
 			this.log("dsblob: zipPath = " + zipPath);
 			this.log("dszip: call streamFile");
-			try (InputStream stream = new FileInputStream(new File(zipPath)))
+			try (InputStream stream = new FileInputStream(zipPath))
 			{
 				org.apache.commons.io.IOUtils.copy(stream, out);
 			}

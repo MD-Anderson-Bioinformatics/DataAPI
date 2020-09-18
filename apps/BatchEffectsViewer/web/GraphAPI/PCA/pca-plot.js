@@ -1486,9 +1486,12 @@ var lastPixelRatio = null;
 	// Provides the header necessary for browser to display SVG tags as an image
 	function _makeHeader(){
 		// Package the image itself
-		var header = '<?xml version="1.0" standalone="no"?>';
-		header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
-		header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
+
+		header = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
+		
+		//var header = '<?xml version="1.0" standalone="no"?>';
+		//header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
+		//header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
 
 		// Embedded stylesheet settings
 		var	rules = getCssAsText ('GraphAPI_PCA.css');

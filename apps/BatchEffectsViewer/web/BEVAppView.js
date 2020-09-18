@@ -1,8 +1,32 @@
 
+/* global globalDataAccess, appview, globalDiagramControl, Promise */
+
 notUN = function(theValue)
 {
 	return ((undefined!==theValue)&&(null!==theValue));
 };
+
+function supportsPdf(theAlgorithm)
+{
+	var result = true;
+	if (!notUN(theAlgorithm))
+	{
+		result = false;
+	}
+	else if (!notUN(theAlgorithm()))
+	{
+		result = false;
+	}
+	else if ("NGCHM" === theAlgorithm().entry_label)
+	{
+		result = false;
+	}
+	else if ("Dispersion Separability Criterion" === theAlgorithm().entry_label)
+	{
+		result = false;
+	}
+	return result;
+}
 
 function toggleClass(theIdArray, theClass)
 {
@@ -213,20 +237,26 @@ function BEVAppView()
 		var linksJson = values[0];
 		//console.log("linksJson.queryForm");
 		//console.log(linksJson.queryForm);
-		self.urlQueryForm(linksJson.queryForm);
+		if (notUN(linksJson.queryForm))
+		{
+			self.urlQueryForm(linksJson.queryForm);
+		}
 		//console.log("linksJson.bevForm");
 		//console.log(linksJson.bevForm);
 		self.urlBevForm(linksJson.bevForm);
 		//console.log("linksJson.stdData");
 		//console.log(linksJson.stdData);
-		self.urlStdData(linksJson.stdData);
+		if (notUN(linksJson.stdData))
+		{
+			self.urlStdData(linksJson.stdData);
+		}
 		var requestedJson = values[1];
 		if(notUN(requestedJson))
 		{
 			self.requestedId(requestedJson.mID);
 			self.requestedIndex(requestedJson.mIndexSource);
 			// handles URL containing link to specific dataset and diagram
-			globalDataAccess.loadIndexAndId(self.requestedId).then((theIndexJson) =>
+			globalDataAccess.loadIndexAndId(self.requestedId, self.requestedIndex).then((theIndexJson) =>
 			{
 				self.jsonIndex(theIndexJson);
 				if(notUN(requestedJson.mAlg))
@@ -380,6 +410,24 @@ function BEVAppView()
 	self.indexMbatchMBatchDatasetType = ko.computed(function () 
 	{
 		return getWithCheck(self.jsonIndex(), 'mbatch', 'dataset_type');
+	});
+	
+	self.isPngDiagram = ko.observable(false);
+	self.algorithmSelected.subscribe(function(theNewValue)
+	{
+		//console.log("subscribe 1 " + theNewValue.entry_label);
+		if ("Supervised Clustering"===theNewValue.entry_label)
+		{
+			self.isPngDiagram(true);
+		}
+		//else if ("Correlation Density Plot"===theNewValue.entry_label)
+		//{
+		//	self.isPngDiagram(true);
+		//}
+		else
+		{
+			self.isPngDiagram(false);
+		}
 	});
 
 } // END model view

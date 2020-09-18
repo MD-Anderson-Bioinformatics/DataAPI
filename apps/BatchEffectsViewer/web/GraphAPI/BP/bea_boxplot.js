@@ -636,9 +636,13 @@ function BeaBoxplot(theBoxDataFile, theBatchDataFile, theAnnotationDataFile, the
 	function _makeHeader()
 	{
 		// Package the image itself
-		var header = '<?xml version="1.0" standalone="no"?>';
-		header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
-		header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
+		var header = '';
+		
+		header = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">\n';
+		
+//		header = '<?xml version="1.0" standalone="no"?>';
+//		header = header + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n';
+//		header = header + '<svg xmlns="http://www.w3.org/2000/svg" version="1.1">\n';
 
 		// Embedded stylesheet settings
 		var rules = getCssAsText('boxplot_styles.css');
@@ -661,10 +665,10 @@ function BeaBoxplot(theBoxDataFile, theBatchDataFile, theAnnotationDataFile, the
 		return _makeHeader() + mBoxplotOuter.getSvg().node().parentNode.innerHTML + _makeFooter();
 	}
 
-	function _getLegendSVGContent(covarName)
+	function _getLegendSVGContent()
 	{
-		//console.log(mBoxplotOuter.getSvgLegend());
-		return _makeHeader() + mBoxplotOuter.getSvgLegend().node().parentNode.innerHTML + _makeFooter();
+		console.log(mBoxplotOuter.getSvgLegend());
+		return _makeHeader() + mBoxplotOuter.getSvgLegend().innerHTML + _makeFooter();
 	}
 
 	this.getSVGContent = _getSVGContent;

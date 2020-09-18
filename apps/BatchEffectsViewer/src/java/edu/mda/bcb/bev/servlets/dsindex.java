@@ -13,7 +13,9 @@ package edu.mda.bcb.bev.servlets;
 
 import edu.mda.bcb.bev.indexes.Indexes;
 import edu.mda.bcb.bev.query.Dataset;
+import edu.mda.bcb.bev.startup.LoadIndexFiles;
 import edu.mda.bcb.bev.util.ZipUtil;
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -24,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "dsindex", urlPatterns =
 {
@@ -50,11 +52,31 @@ public class dsindex extends HttpServlet
 		{
 			this.log("dsindex: get json index");
 			String id = request.getParameter("id");
-			Indexes myIndexes = (Indexes)(this.getServletContext().getAttribute("INDEXES"));
-			Dataset ds = myIndexes.getDataset(id);
-			String zipPath = ds.mPath;
-			String index = "index.json";
-			ZipUtil.streamFile(zipPath, index, out, this);
+			String index = request.getParameter("index");
+			this.log("dsindex: id=" + id + " index=" + index);
+			if ("BEI_JOB".equals(index))
+			{
+				String zipPath = new File(LoadIndexFiles.M_DATA_FILES, id + ".zip").getAbsolutePath();
+				String indexFile = "index.json";
+				this.log("dsindex: zipPath=" + zipPath);
+				if (new File(LoadIndexFiles.M_DATA_FILES, id + ".zip").exists())
+				{
+					this.log("dsindex: zipPath found");
+				}
+				else
+				{
+					this.log("dsindex: zipPath not seen");
+				}
+				ZipUtil.streamFile(zipPath, indexFile, out, this);
+			}
+			else
+			{
+				Indexes myIndexes = (Indexes)(this.getServletContext().getAttribute("INDEXES"));
+				File zipPath = myIndexes.getZipPath(id);
+				this.log("dsindex: zipPath = " + zipPath.getAbsolutePath());
+				String indexFile = "index.json";
+				ZipUtil.streamFile(zipPath.getAbsolutePath(), indexFile, out, this);
+			}
 		}
 	}
 

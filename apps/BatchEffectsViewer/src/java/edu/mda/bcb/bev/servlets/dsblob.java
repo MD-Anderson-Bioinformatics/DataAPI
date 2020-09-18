@@ -12,8 +12,8 @@
 package edu.mda.bcb.bev.servlets;
 
 import edu.mda.bcb.bev.indexes.Indexes;
-import edu.mda.bcb.bev.query.Dataset;
 import edu.mda.bcb.bev.util.ZipUtil;
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "dsblob", urlPatterns =
 {
@@ -58,11 +58,10 @@ public class dsblob extends HttpServlet
 			this.log("dsblob: id = " + id);
 			this.log("dsblob: text = " + text);
 			Indexes myIndexes = (Indexes)(this.getServletContext().getAttribute("INDEXES"));
-			Dataset ds = myIndexes.getDataset(id);
-			String zipPath = ds.mPath;
-			this.log("dsblob: zipPath = " + zipPath);
+			File zipPath = myIndexes.getZipPath(id);
+			this.log("dsblob: zipPath = " + zipPath.getAbsolutePath());
 			this.log("dsblob: call streamFile");
-			ZipUtil.streamFile(zipPath, text, out,this);
+			ZipUtil.streamFile(zipPath.getAbsolutePath(), text, out,this);
 			this.log("dsblob: after streamFile");
 		}
 	}

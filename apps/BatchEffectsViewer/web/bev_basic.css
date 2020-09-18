@@ -25,7 +25,7 @@
 	--row-B-height: 40vh;	
 }
 
-*{ font-family: Arial,sans-serif;  font-size: 14px;}
+*{ font-family: Arial,sans-serif; }
 *{box-sizing: border-box;}
 
 .body-wrapper
@@ -56,6 +56,11 @@ body.wait, body.wait *
 	max-width:100%;
 	width: auto;
 	height: auto;	
+}
+
+.displayPngImgNoFit
+{
+	max-width: none;
 }
 
 /* ********************************************* */

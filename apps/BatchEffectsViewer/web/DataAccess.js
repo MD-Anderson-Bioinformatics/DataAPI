@@ -34,9 +34,9 @@ class DataAccess
 	{
 		return this.internalDataAccess.loadLinks();
 	};
-	loadIndexAndId(theRequestedIdKO)
+	loadIndexAndId(theRequestedIdKO, theRequestedIndexKO)
 	{
-		return this.internalDataAccess.loadIndexAndId(theRequestedIdKO);
+		return this.internalDataAccess.loadIndexAndId(theRequestedIdKO, theRequestedIndexKO);
 	};
 	getDataFile(theRequestedId, theTextFile)
 	{

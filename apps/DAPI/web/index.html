@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -81,20 +76,22 @@ and open the template in the editor.
 			<input type="text" readonly style="opacity: 0; position: absolute; z-index: -9999; pointer-events: none;" value="" id="dapiCopyQuery">
 			<input type="text" readonly style="opacity: 0; position: absolute; z-index: -9999; pointer-events: none;" value="" id="dapiCopyURL">
 			<div class="mdaServiceHeaderTitle">
-				<div class="mdaTitleText">&nbsp;&nbsp;<span class="mdaTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-07-20-1100</small></div>
+				<div class="mdaTitleText">&nbsp;&nbsp;<span class="mdaTitleText" data-bind="text:$root.appName()"></span>&nbsp;<small>2020-09-11-1000</small></div>
 				<div class="tooltip mdaHeaderLinks">
 					<img id="tooltipImage_Burger" title="Menu Options" data-theme="myTooltipTheme" src="images/hamburger_icon.png" alt="Menu Options">
 					<div id="tooltipContent_Burger" class="tooltiptext">
-						<strong>Documentation</strong><br>
-						<a href="QFusage.html" target="_blank"><small>Help/Usage</small></a><br>
-						<a href="GDCConverters.html" target="_blank"><small>Conversion from GDC Data</small></a><br>
-						<a href="" onclick="document.getElementById('alrtLegalNotice').style.display = 'block'; return false;">Legal Notice</a><br>
-						<a href="https://github.com/MD-Anderson-Bioinformatics/" target="_blank"><small>GitHub</small></a><br>
-						<strong>URLs and R Package Utilities</strong><br>
-						<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyQueryString()">Copy Query String for R Package</button><br>
-						<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyURLString()">Copy Bookmark-able URL</button><br>
-						<strong>About</strong><br>
-						<a href="https://bioinformatics.mdanderson.org" target="_blank"><small>About BCB at MD Anderson</small></a><br>
+						<small>
+							<strong>Documentation</strong><br>
+							<a href="QFusage.html" target="_blank">Help/Usage</a><br>
+							<a href="GDCConverters.html" target="_blank">Conversion from GDC Data</a><br>
+							<a href="" onclick="document.getElementById('alrtLegalNotice').style.display = 'block'; return false;">Legal Notice</a><br>
+							<a href="https://github.com/MD-Anderson-Bioinformatics/" target="_blank">GitHub</a><br>
+							<strong>URLs and R Package Utilities</strong><br>
+							<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyQueryString()">Copy Query String for R Package</button><br>
+							<button style="font-size: 10px; padding: 0px; height: 20px;" onclick="copyURLString()">Copy Bookmark-able URL</button><br>
+							<strong>About</strong><br>
+							<a href="https://bioinformatics.mdanderson.org" target="_blank">About BCB at MD Anderson</a><br>
+						</small>
 					</div>
 				</div>
 			</div>

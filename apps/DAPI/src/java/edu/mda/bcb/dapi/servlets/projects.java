@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "projects", urlPatterns =
 {

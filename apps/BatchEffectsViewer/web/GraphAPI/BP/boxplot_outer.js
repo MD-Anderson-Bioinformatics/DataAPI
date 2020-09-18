@@ -122,11 +122,16 @@ function BoxPlotOuter(theDiv)
 		mXScaleHeight = theXScaleHeight;
 		mScrollbarHeight = theScrollbarHeight;
 		mXLabelHeight = theXLabelHeight;
-	}
+	};
 	
 	this.getSvg = function()
 	{
 		return mBoxplotTop;
+	};
+	
+	this.getSvgLegend = function()
+	{
+		return mLegendDiv;
 	};
 	
 	this.render = function (theData, theBatchData, theAnnotationData, theHistogramData, 

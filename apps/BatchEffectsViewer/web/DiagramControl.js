@@ -1,3 +1,5 @@
+/* global URL */
+
 class DiagramControl
 {
 	constructor(theDataAccess, theDiagramId, theLegendId, theDatapaneId, theBevUrl)
@@ -175,12 +177,14 @@ class DiagramControl
 	{
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.diagram_image, this.divDiagramId);
 		this.dataAccess.addImage(theDatasetId, undefined, this.divLegendId);
+		this.resizeUtil = null;
 	};
 
 	handleNewDiscrete(theDatasetId, theNewDiagram)
 	{
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.diagram_image, this.divDiagramId);
 		this.dataAccess.addImage(theDatasetId, undefined, this.divLegendId);
+		this.resizeUtil = null;
 	};
 
 	handleNewBoxplot(theDatasetId, theNewDiagram)
@@ -201,6 +205,7 @@ class DiagramControl
 		// load calls for an image are asyncronous
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.diagram_image, this.divDiagramId);
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.legend_image, this.divLegendId);
+		this.resizeUtil = null;
 	};
 
 	handleNewDsc(theDatasetId, theNewDiagram)
@@ -258,6 +263,7 @@ class DiagramControl
 		// load calls for an image are asyncronous
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.diagram_image, this.divDiagramId);
 		this.dataAccess.addImage(theDatasetId, theNewDiagram.legend_image, this.divLegendId);
+		this.resizeUtil = null;
 	};
 	
 	makeDataPointLog(struct, dataNode)
@@ -284,4 +290,131 @@ class DiagramControl
 			dataNode.scrollTop = dataNode.scrollHeight;
 		}
 	};
+	
+	//// ///////////////////////////////////////////////////////////////////////
+	//// save as PDF code
+	//// ///////////////////////////////////////////////////////////////////////
+
+	saveAsPdf()
+	{
+		$("body").addClass("wait");
+		try
+		{
+			//console.log("saveAsPdf start");
+			let docPdf = new PDFDocument({compress: true});
+			if(notUN(this.resizeUtil))
+			{
+				// D3 plugin (or DSC)
+				if(notUN(this.resizeUtil.plot.getSVGContent))
+				{
+					// getSVGContent
+					let hiddenDiv = document.getElementById('renderSvgForPrinting');
+					hiddenDiv.innerHTML = this.resizeUtil.plot.getSVGContent();
+					SVGtoPDF(docPdf, hiddenDiv.firstChild, 0, 0, {useCSS:true});
+					hiddenDiv.innerHTML = "";
+					//console.log("typeof(this.resizeUtil.plot)");
+					// TODO: change method to detect hierclustering
+					if (typeof(this.resizeUtil.plot) === "function")
+					{
+						// iterate over batch types
+						// getLegendSVGContent
+						//console.log(this.resizeUtil.plot.getGroupVariables());
+						var batchTypeArray = this.resizeUtil.plot.getGroupVariables();
+						for(var batchTypeIndex in batchTypeArray)
+						{
+							//console.log("batchTypeIndex = " + batchTypeIndex);
+							var batchType = batchTypeArray[batchTypeIndex];
+							//console.log("batchType");
+							//console.log(batchType);
+							docPdf.addPage();
+							// hierClustPlotSelect
+							//console.log("set batchType");
+							$('#hierClustPlotSelect').val(batchType).change();
+							// changes drop down, does not fire change event, manually update legend 
+							let divEle = document.getElementById("hierClustPlotLegend");
+							divEle.innerHTML = "";
+							this.resizeUtil.plot.makeLegend(batchType, divEle);
+							// get SVG text
+							//console.log("get SVG via batchType text");
+							var svgText = this.resizeUtil.plot.getLegendSVGContent(batchType);
+							//console.log("got svg text");
+							//console.log(svgText);
+							hiddenDiv.innerHTML = svgText;
+							SVGtoPDF(docPdf, hiddenDiv.firstChild, 0, 0, {useCSS:true});
+							hiddenDiv.innerHTML = "";
+						}
+					}
+					else
+					{
+						// getLegendSVGContent - for things other than hierarchical clustering
+						console.log("this.resizeUtil.plot.getLegendSVGContent() 2");
+						docPdf.addPage();
+						hiddenDiv.innerHTML = this.resizeUtil.plot.getLegendSVGContent();
+						SVGtoPDF(docPdf, hiddenDiv.firstChild, 0, 0, {useCSS:true});
+						hiddenDiv.innerHTML = "";
+					}
+				}
+			}
+			else
+			{
+				// PNG files
+				docPdf.image($('#BEVDisplay_DiagramdynamicImg')[0].src, 
+				{
+					fit: [ docPdf.page.width - docPdf.page.margins.left - docPdf.page.margins.right, docPdf.page.height - docPdf.page.margins.top - docPdf.page.margins.bottom ] 
+				});
+				if (notUN($('#BEVDisplay_Legend_ContentdynamicImg')[0]))
+				{
+					docPdf.addPage();
+					docPdf.image($('#BEVDisplay_Legend_ContentdynamicImg')[0].src, 
+					{
+						fit: [ docPdf.page.width - docPdf.page.margins.left - docPdf.page.margins.right, docPdf.page.height - docPdf.page.margins.top - docPdf.page.margins.bottom ] 
+					});
+				}
+			}
+			console.log("saveAsPdf end");
+			docPdf.end();
+			console.log("stream pipe");
+			let stream = docPdf.pipe(blobStream());
+			stream.on('finish', function()
+			{
+				console.log("stream.toBlob");
+				let blob = stream.toBlob('application/pdf');
+				const downloadFile = (blob, fileName) => 
+				{
+					const link = document.createElement('a');
+					// create a blobURI pointing to our Blob
+					link.href = URL.createObjectURL(blob);
+					link.download = fileName;
+					// TODO: look for nicer way to download blob
+					// some browser needs the anchor to be in the doc
+					document.body.append(link);
+					link.click();
+					link.remove();
+					// in case the Blob uses a lot of memory
+					window.addEventListener('focus', e=>URL.revokeObjectURL(link.href), {once:true});
+					$("body").removeClass("wait");
+				};
+				downloadFile(blob, "diagram.pdf");
+				console.log("saveAsPdf done");
+			});
+		}
+		catch(theExp)
+		{
+			$("body").removeClass("wait");
+			alert(theExp);
+		}
+	};
+	
+	//// ///////////////////////////////////////////////////////////////////////
+	//// toggle fit class for diagram static images
+	//// ///////////////////////////////////////////////////////////////////////
+	toggleImgFit()
+	{
+		$(".displayPngImg").toggleClass("displayPngImgNoFit");
+		$(".displayPngDiv").toggleClass("displayPngImgNoFit");
+	};
+	
+	//// ///////////////////////////////////////////////////////////////////////
+	//// ///////////////////////////////////////////////////////////////////////
+	//// ///////////////////////////////////////////////////////////////////////
 }

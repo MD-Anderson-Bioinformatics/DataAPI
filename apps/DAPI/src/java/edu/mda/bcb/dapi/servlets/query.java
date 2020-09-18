@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "query", urlPatterns =
 {
@@ -81,28 +81,38 @@ public class query extends HttpServlet
 			if (null!=myIndexes)
 			{
 				TreeSet<Dataset> resp = queryInst.process(myIndexes);
-				out.println("{");
-				out.print("\"headers\": ");
-				out.print(resp.first().getJsonHeaders((null!=bevUrl)));
-				out.println(",");
-				out.print("\"data\": ");
-				out.println("[");
-				boolean first = true;
-				for (Dataset ds : resp)
+				if (resp.size()<1)
 				{
-					if (true==first)
-					{
-						first = false;
-					}
-					else
-					{
-						out.println(",");
-					}
-					out.print(ds.getJson(gson, stdUrl, bevUrl));
+					out.println("{");
+					out.println("\"headers\": [ ],");
+					out.println("\"data\": [ ]");
+					out.println("}");
 				}
-				out.println("");
-				out.println("]");
-				out.println("}");
+				else
+				{
+					out.println("{");
+					out.print("\"headers\": ");
+					out.print(resp.first().getJsonHeaders((null!=bevUrl)));
+					out.println(",");
+					out.print("\"data\": ");
+					out.println("[");
+					boolean first = true;
+					for (Dataset ds : resp)
+					{
+						if (true==first)
+						{
+							first = false;
+						}
+						else
+						{
+							out.println(",");
+						}
+						out.print(ds.getJson(gson, stdUrl, bevUrl));
+					}
+					out.println("");
+					out.println("]");
+					out.println("}");
+				}
 			}
 			else
 			{

@@ -25,11 +25,11 @@ The UNLISTED entry is a vector of dataset IDs which are in theDownloadDir but no
 The UNCHANGED entry is a dataframe with the same columns as the NEW dataframe, listing datasets that are in the query but do not need to be updated.
 }
 \examples{
-  # TCGA-ACC data from version 2020_01_31_0845
+  # TCGA-ACC data
   queryOne <- paste("{\"mFiles\":[\"batches.tsv\"],\"mSources\":[],\"mVariants\":[\"current\"],",
                     "\"mProjects\":[],\"mSubprojects\":[\"TCGA-ACC\"],\"mCategories\":[],",
                     "\"mPlatforms\":[],\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],",
-                    "\"mVersions\":[\"2020_01_31_0845\"]}", sep="")
+                    "\"mVersions\":[]}", sep="")
   # temp directory
   datasetDir <- file.path(tempdir(), "DAPIR")
   print(datasetDir)

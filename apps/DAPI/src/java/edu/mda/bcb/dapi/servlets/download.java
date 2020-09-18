@@ -14,6 +14,7 @@ package edu.mda.bcb.dapi.servlets;
 import edu.mda.bcb.dapi.indexes.Indexes;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -25,7 +26,7 @@ import org.apache.tomcat.util.http.fileupload.util.Streams;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "download", urlPatterns =
 {
@@ -47,7 +48,6 @@ public class download extends HttpServlet
 			throws ServletException, IOException
 	{
 		response.setContentType("application/zip;charset=UTF-8");
-		// TODO: add limite on number of simultaneous downloads
 		try (ServletOutputStream out = response.getOutputStream())
 		{
 			Indexes myIndexes = null;
@@ -64,17 +64,24 @@ public class download extends HttpServlet
 			this.log("download::processRequest id=" + id);
 			response.setHeader("Content-Disposition", "attachment; filename=\"" + id + ".zip\"");
 			File zip = myIndexes.getPath(id);
-			try(FileInputStream input = new FileInputStream(zip))
-			{
-				Streams.copy(input, out, true);
-				response.setStatus(200);
-			}
+			// single simultaneous downloads
+			stream(zip, out, response);
 		}
 		catch (Exception exp)
 		{
 			log("download::processRequest failed", exp);
 			response.setStatus(500);
 			response.sendError(500, exp.getMessage());
+		}
+	}
+	
+	synchronized static public void stream(File theZip, ServletOutputStream theOut, HttpServletResponse theResponse) throws FileNotFoundException, IOException
+	{
+		// single simultaneous downloads
+		try(FileInputStream input = new FileInputStream(theZip))
+		{
+			Streams.copy(input, theOut, true);
+			theResponse.setStatus(200);
 		}
 	}
 

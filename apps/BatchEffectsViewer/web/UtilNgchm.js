@@ -1,8 +1,14 @@
+/* global globalDataAccess */
+
 class UtilNgchm
 {
 	constructor(theDataAccess, theDiagramId, theLegendId, theDatapaneId, theNewDiagram, theIndexKO, theDatasetId,
 				theMakeDataPointLogFunction, theBevUrl)
 	{
+		//console.log("UtilNgchm this");
+		//console.log(this);
+		//console.log("UtilNgchm theMakeDataPointLogFunction");
+		//console.log(theMakeDataPointLogFunction);
 		this.dataAccess = theDataAccess;
 		this.divDiagramId = theDiagramId;
 		this.divLegendId = theLegendId;
@@ -39,6 +45,10 @@ class UtilNgchm
 				struct[indx][1] = covariates[x].value;
 			}
 			var dataNode = document.getElementById(e.data.id);
+			//console.log("showNgcmDatapoint this");
+			//console.log(this);
+			//console.log("showNgcmDatapoint this.makeDataPointLogFunction");
+			//console.log(this.makeDataPointLogFunction);
 			this.makeDataPointLogFunction(struct, dataNode);
 		}
 		else
@@ -57,11 +67,14 @@ class UtilNgchm
 	
 	newNgchm()
 	{
-		// "ngchm": "/NGCHM/ShipDate_ngchm.ngchm"
-		var ngchmFile = this.newDiagram.ngchm;
+		$("body").addClass("wait");
 		var self = this;
-		self.dataAccess.getDataBlobPromise(self.datasetId, ngchmFile, self.bevUrl).then(function (blob)
+		try
 		{
+			//console.log("newNgchm self");
+			//console.log(self);
+			// "ngchm": "/NGCHM/ShipDate_ngchm.ngchm"
+			var ngchmFile = this.newDiagram.ngchm;
 			var ngchm = document.createElement('iframe');
 			ngchm.style = "height:100%; width:100%; border-style:none; ";
 			// Make visible and append to DOM
@@ -74,48 +87,93 @@ class UtilNgchm
 			// support for multiple internal tags
 			// // self.dataNode.id = "ngchmLog_" + ngchmSuffixStr;
 			//self.dataNode.id = "ngchmLog_";
-			console.log("clear local storage");
-			localStorage.clear();
 			var doc = ngchm.contentWindow.document;
 			doc.open();
-			var reader = new FileReader();
-			reader.readAsDataURL(blob);
-			reader.onloadend = function ()
+			if (document.querySelector('[data-src="lib/ngchmWidget-min.js"]') !== null)
 			{
-				var base64data = reader.result;
-				try
+				console.log("NGCHM doc.write for file based access");
+				globalDataAccess.getDataBlobPromise(self.datasetId, ngchmFile, self.bevUrl).then((blob) => 
 				{
-					sessionStorage.ngchmB64 = base64data;
-				}
-				catch(exp)
-				{
-					alert(exp);
-				}
-				if (document.querySelector('[data-src="lib/ngchmWidget-min.js"]') !== null)
-				{
-						doc.write("<!DOCTYPE html><HTML><BODY><div id='NGCHMEmbed' style='display: flex; flex-direction: column; background-color: white; height: 95%; margin-bottom: 0.25em; padding: 5px'></div>" 
-								+ "<script type='text/Javascript'>" + document.querySelector('[data-src="lib/ngchmWidget-min.js"]').innerHTML + "<\/script>" 
-								+ "<script type='text/Javascript'>fetch(sessionStorage.ngchmB64).then(res => res.blob()).then(blob => NgChm.UTIL.embedCHM(blob));<\/script></BODY></HTML>");
-				}
-				else
-				{
-					doc.write("<!DOCTYPE html><HTML><BODY><div id='NGCHMEmbed' style='display: flex; flex-direction: column; background-color: white; height: 95%; margin-bottom: 0.25em; padding: 5px'></div>" 
-								+ "<script src='lib/ngchmWidget-min.js'><\/script><script src='DataAccess.js'><\/script>" 
-								+ "<script type='text/Javascript'>fetch(sessionStorage.ngchmB64).then(res => res.blob()).then(blob => NgChm.UTIL.embedCHM(blob));<\/script></BODY></HTML>");
-								//+ "<script type='text/Javascript'>new DataAccess().getDataBlobPromise('" + self.datasetId + "','" + ngchmFile + "').then((blob) => {NgChm.UTIL.embedCHM(blob)});<\/script></BODY></HTML>");
-				}
-				doc.close();
-				var nonce = "N";
-				window.addEventListener('message', self.showNgcmDatapoint, false);
-				var datapaneId = self.divDatapaneId;
-				ngchm.onload = (() => 
-				{
-					console.log ('Sending message to ngchm');
-					ngchm.contentWindow.postMessage ({ nonce: nonce, override: 'ShowMapDetail', ngchm_id: datapaneId }, '*');
+					//blob.type = "application/zip";
+					//console.log("write blob");
+					//console.log(blob);
+					var reader = new FileReader();
+					reader.readAsDataURL(blob);
+					reader.onloadend = function ()
+					{
+						//console.log("write reader.result");
+						//console.log(reader.result);
+						// set type, which is empty from jszip blob
+						var dataUrl = "data:application/zip;base64," + reader.result.substr(reader.result.indexOf(',')+1);
+						//console.log("write dataUrl");
+						//console.log(dataUrl);
+						doc.write("<!DOCTYPE html>"
+								+ "<HTML>"
+								+ "<HEAD>"
+								+ "</HEAD>"
+								+ "<BODY>"
+								+ "<div id='NGCHMEmbed' style='display: flex; flex-direction: column; background-color: white; height: 95%; margin-bottom: 0.25em; padding: 5px'></div>" 
+								+ "<script type='text/javascript'>" + document.querySelector('[data-src="lib/ngchmWidget-min.js"]').innerHTML + "<\/script>" 
+								+ "<script type='text/javascript'> "
+									+"var dataUrl =\"" + dataUrl + "\"; "
+									//+"console.log('script dataUrl'); "
+									//+"console.log(dataUrl); "
+									+"fetch(dataUrl).then(res => res.blob()).then(blob => {NgChm.UTIL.embedCHM(blob)}); "
+								+ "<\/script>"
+								+ "</BODY>"
+								+ "</HTML>");
+					};
 				});
-			};
-		});
-	};
+			}
+			else
+			{
+				console.log("NGCHM doc.write for HTTP access");
+				//console.log("self.datasetId=" + self.datasetId);
+				//console.log("ngchmFile=" + ngchmFile);
+				//console.log("self.bevUrl=" + self.bevUrl);
+				doc.write("<!DOCTYPE html>"
+						+ "<HEAD>"
+						+ "<script src='BEVAppView.js'><\/script><script src='DataAccess.js'><\/script><script src='DataAccess_http.js'><\/script>"
+						+ "</HEAD>"
+						+ "<BODY>"
+						+ "<div id='NGCHMEmbed' style='display: flex; flex-direction: column; background-color: white; height: 95%; margin-bottom: 0.25em; padding: 5px'></div>" 
+						+ "<script src='lib/ngchmWidget-min.js'><\/script>" 
+						+ "<script type='text/Javascript'> "
+							//+"console.log('http call 1'); "
+							+"var foo=new DataAccess(); "
+							//+"console.log(foo); "
+							//+"console.log(foo.getDataBlobPromise); "
+							//+"console.log('http call 2'); "
+							+"foo.getDataBlobPromise('" + self.datasetId + "','" + ngchmFile + "','" + self.bevUrl + "').then((blob) => {NgChm.UTIL.embedCHM(blob)}); "
+						+"<\/script>"
+						+ "</BODY>"
+						+ "</HTML>");
+			}
+			doc.close();
+			var nonce = "N";
+			//console.log("newNgchm self addEventListener");
+			//console.log(self);
+			//console.log(self.showNgcmDatapoint);
+			window.addEventListener('message', 
+				function(theEvent)
+				{
+					self.showNgcmDatapoint(theEvent);
+				}, 
+				false);
+			var datapaneId = self.divDatapaneId;
+			ngchm.onload = (() => 
+			{
+				console.log ('Sending message to ngchm');
+				ngchm.contentWindow.postMessage ({ nonce: nonce, override: 'ShowMapDetail', ngchm_id: datapaneId }, '*');
+				$("body").removeClass("wait");
+			});
+		}
+		catch(theExp)
+		{
+			$("body").removeClass("wait");
+			alert(theExp);
+		}
+	}
 	
 	finishedCallback()
 	{

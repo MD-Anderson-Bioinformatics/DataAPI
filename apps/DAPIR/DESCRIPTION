@@ -1,8 +1,8 @@
 Package: DAPIR
 Type: Package
 Title:  MD Anderson Data API for R
-Version: 1.7.0
-Date: 2020-07-13
+Version: 1.7.1
+Date: 2020-08-31
 Author: Tod Casasent <tdcasasent@mdanderson.org>
 Maintainer: Rehan Akbani <rakbani@mdanderson.org>
 Description: Provides R functions for accessing Standardized Data and Batch Effects Results files via an HTTP API.

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 public class Dataset implements Comparable<Dataset>
 {
@@ -317,21 +317,50 @@ public class Dataset implements Comparable<Dataset>
 	private ArrayList<String> getStrings(String theStdURL, String theBevURL) throws UnsupportedEncodingException
 	{
 		ArrayList<String> list = new ArrayList<>();
-		String stdURL = null;
+		String downloadUrl = null;
 		String bevUrl = null;
-		if (theStdURL.endsWith("/"))
+		if ((mID.startsWith("bev-"))||(mID.startsWith("dsc-")))
 		{
-			stdURL = theStdURL + "download?id=" + mID;
+			// download for MBatch Archive
+			if (mID.startsWith("dsc"))
+			{
+				if (theBevURL.endsWith("/"))
+				{
+					downloadUrl = theBevURL + "dszip?id=" + mID.replace("dsc-", "bev-").replace("-"+mAlgo, "").replace("-"+mLvl1, "").replace("-"+mLvl2, "");
+				}
+				else
+				{
+					downloadUrl = theBevURL + "/dszip?id=" + mID.replace("dsc-", "bev-").replace("-"+mAlgo, "").replace("-"+mLvl1, "").replace("-"+mLvl2, "");
+				}
+			}
+			else
+			{
+				if (theBevURL.endsWith("/"))
+				{
+					downloadUrl = theBevURL + "dszip?id=" + mID;
+				}
+				else
+				{
+					downloadUrl = theBevURL + "/dszip?id=" + mID;
+				}
+			}
 		}
 		else
 		{
-			stdURL = theStdURL + "/download?id=" + mID;
+			// download for Standardized Data
+			if (theStdURL.endsWith("/"))
+			{
+				downloadUrl = theStdURL + "download?id=" + mID;
+			}
+			else
+			{
+				downloadUrl = theStdURL + "/download?id=" + mID;
+			}
 		}
 		if (null!=theBevURL)
 		{
 			if (mID.startsWith("dsc"))
 			{
-				
 				bevUrl = theBevURL + "?id=" + mID.replace("dsc-", "bev-").replace("-"+mAlgo, "").replace("-"+mLvl1, "").replace("-"+mLvl2, "")
 						+ "&index=" + mIndexSource.replace("dsc-", "bev-")
 						+ "&alg=" + URLEncoder.encode("PCA+", StandardCharsets.UTF_8.name()) 
@@ -355,7 +384,7 @@ public class Dataset implements Comparable<Dataset>
 		list.add(mDetail);
 		list.add(mVersion);
 		toStringOptional(list);
-		list.add(stdURL);
+		list.add(downloadUrl);
 		if (null!=theBevURL)
 		{
 			list.add(bevUrl);

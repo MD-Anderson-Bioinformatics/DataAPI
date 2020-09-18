@@ -1,3 +1,5 @@
+/* global appview */
+
 initializeTooltips = function()
 {
 	var tooltipsImg = document.querySelectorAll('*[id^="tooltipImage_"]');
@@ -458,15 +460,22 @@ function AppViewModel()
 					}
 					// destroy: true eleminates the old datatable object
 					// order: start with 1, since 0 (ID) is present but hidden
-					$('#resultsTable').DataTable(
+					if (0===theJson.headers.length)
 					{
-						destroy: true,
-						data: theJson.data,
-						columns: theJson.headers,
-						order: [[ 1, 'asc' ], [ 2, 'asc' ], [ 3, 'asc' ], [ 4, 'asc' ], 
-								[ 5, 'asc' ], [ 6, 'asc' ], [ 7, 'asc' ], [ 8, 'asc' ], 
-								[ 9, 'asc' ], [ 10, 'asc' ], [ 11, 'asc' ], [ 12, 'asc' ]]
-					} );
+						$('#resultsTable').DataTable().clear().draw();
+					}
+					else
+					{
+						$('#resultsTable').DataTable(
+						{
+							destroy: true,
+							data: theJson.data,
+							columns: theJson.headers,
+							order: [[ 1, 'asc' ], [ 2, 'asc' ], [ 3, 'asc' ], [ 4, 'asc' ], 
+									[ 5, 'asc' ], [ 6, 'asc' ], [ 7, 'asc' ], [ 8, 'asc' ], 
+									[ 9, 'asc' ], [ 10, 'asc' ], [ 11, 'asc' ], [ 12, 'asc' ]]
+						} );
+					}
 				},
 				error: function(jqXHR, textStatus, errorThrown)
 				{
@@ -544,7 +553,12 @@ function updateEnteredSelected(theEntered, theSelected, theElementId)
 
 function downloadUrl(data,type,row,meta)
 {
-	return "<a href='" + data + "'>Download Data</a>";
+	let html = "<a href='" + data + "'>Standardized Data</a>";
+	if (data.includes("dszip"))
+	{
+		html = "<a href='" + data + "'>MBatch Archive</a>";
+	}
+	return html;
 }
 
 function viewUrl(data,type,row,meta)

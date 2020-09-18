@@ -21,7 +21,7 @@ import javax.servlet.annotation.WebListener;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebListener
 public class LoadIndexFiles implements ServletContextListener
@@ -29,7 +29,7 @@ public class LoadIndexFiles implements ServletContextListener
 	static public String M_INDEX_FILES = "/BEV/INDEXES";
 	static public String M_DATA_FILES = "/BEV/DATA";
 	static public String M_CONFIG_FILES = "/DAPI/CONFIG/dapi.properties";
-	static public String M_VERSION = "BEV 2020-07-20-1100";
+	static public String M_VERSION = "BEV 2020-09-11-1000";
 
 	@Override
 	public void contextInitialized(ServletContextEvent sce)

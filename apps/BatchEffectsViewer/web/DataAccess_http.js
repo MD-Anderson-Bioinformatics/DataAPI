@@ -99,7 +99,7 @@ class DataAccess_http
 		});
 	};
 
-	loadIndexAndId(theRequestedIdKO)
+	loadIndexAndId(theRequestedIdKO, theRequestedIndexKO)
 	{
 		//console.log("loadIndexAndId = " + theRequestedIdKO());
 		return $.ajax(
@@ -110,7 +110,8 @@ class DataAccess_http
 			cache: false,
 			data:
 			{
-				id: theRequestedIdKO()
+				id: theRequestedIdKO(), 
+				index: theRequestedIndexKO()
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 			{

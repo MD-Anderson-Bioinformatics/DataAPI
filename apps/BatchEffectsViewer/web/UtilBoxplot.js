@@ -1,3 +1,5 @@
+/* global Papa */
+
 class UtilBoxplot
 {
 	constructor(theDataAccess, theDiagramId, theLegendId, theDatapaneId, theNewDiagram, theIndexKO, theDatasetId)

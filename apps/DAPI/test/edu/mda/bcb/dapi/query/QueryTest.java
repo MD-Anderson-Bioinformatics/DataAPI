@@ -24,7 +24,7 @@ import org.junit.Test;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 public class QueryTest
 {

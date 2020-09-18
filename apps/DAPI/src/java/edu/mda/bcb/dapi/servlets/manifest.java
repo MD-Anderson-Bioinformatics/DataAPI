@@ -30,7 +30,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "manifest", urlPatterns =
 {
@@ -85,10 +85,17 @@ public class manifest extends HttpServlet
 			if (null!=myIndexes)
 			{
 				TreeSet<Dataset> resp = queryInst.process(myIndexes);
-				out.println(resp.first().getHeaders((null!=bevUrl)));
-				for (Dataset ds : resp)
+				if (resp.size()>0)
 				{
-					out.println(ds.toString(stdUrl, bevUrl));
+					out.println(resp.first().getHeaders((null!=bevUrl)));
+					for (Dataset ds : resp)
+					{
+						out.println(ds.toString(stdUrl, bevUrl));
+					}
+				}
+				else
+				{
+					out.println("");
 				}
 			}
 			else

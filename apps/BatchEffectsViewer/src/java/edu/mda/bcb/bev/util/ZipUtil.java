@@ -24,7 +24,7 @@ import org.apache.commons.compress.utils.IOUtils;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 public class ZipUtil
 {

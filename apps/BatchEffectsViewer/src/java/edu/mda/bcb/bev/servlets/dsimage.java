@@ -14,6 +14,7 @@ package edu.mda.bcb.bev.servlets;
 import edu.mda.bcb.bev.indexes.Indexes;
 import edu.mda.bcb.bev.query.Dataset;
 import edu.mda.bcb.bev.util.ZipUtil;
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -24,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "dsimage", urlPatterns =
 {
@@ -55,11 +56,10 @@ public class dsimage extends HttpServlet
 			this.log("dsimage: id = " + id);
 			this.log("dsimage: image = " + image);
 			Indexes myIndexes = (Indexes)(this.getServletContext().getAttribute("INDEXES"));
-			Dataset ds = myIndexes.getDataset(id);
-			String zipPath = ds.mPath;
-			this.log("dsimage: zipPath = " + zipPath);
+			File zipPath = myIndexes.getZipPath(id);
+			this.log("dsimage: zipPath = " + zipPath.getAbsolutePath());
 			this.log("dsimage: call streamImageB64");
-			ZipUtil.streamImageB64(zipPath, image, out, this);
+			ZipUtil.streamImageB64(zipPath.getAbsolutePath(), image, out, this);
 			this.log("dsimage: after streamImageB64");
 		}
 	}

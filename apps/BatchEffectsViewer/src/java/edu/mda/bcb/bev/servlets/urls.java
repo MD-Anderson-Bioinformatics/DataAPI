@@ -13,8 +13,6 @@ package edu.mda.bcb.bev.servlets;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import edu.mda.bcb.bev.indexes.Indexes;
-import edu.mda.bcb.bev.query.Dataset;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Properties;
@@ -26,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author linux
+ * @author Tod-Casasent
  */
 @WebServlet(name = "urls", urlPatterns =
 {

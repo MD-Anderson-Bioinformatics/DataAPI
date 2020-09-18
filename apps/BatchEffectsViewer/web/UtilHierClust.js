@@ -33,8 +33,10 @@ class UtilHierClust
 		var legendContent = document.createElement("div");
 		legend.classList.add("plotChild");
 		legendDropdown.classList.add("hierClustPlotDropdown");
+		dropdown.id = "hierClustPlotSelect";
 		dropdown.classList.add("hierClustPlotSelect");
 		legendDivider.classList.add("legendSplitter");
+		legendContent.id = "hierClustPlotLegend";
 		legendContent.classList.add("hierClustPlotLegend");
 
 		// populate options for legend dropdown
@@ -42,6 +44,7 @@ class UtilHierClust
 		for (var i = 0; i < groups.length; i++) 
 		{
 			var option = document.createElement("option");
+			option.value = groups[i];
 			option.text = groups[i];
 			dropdown.add(option);
 		}
@@ -218,6 +221,8 @@ class UtilHierClust
 				theMakeDataPointLog(struct, document.getElementById(self.divDatapaneId));
 			};
 			self.plot = HierClustPlot(model, plotDiv, params);
+			console.log("self.plot");
+			console.log(self.plot);
 			var legend = self.createHierClustLegend(self.plot);
 			legendDiv.appendChild(legend);
 			self.finishedCallback(self, controlDiv, self.plot);

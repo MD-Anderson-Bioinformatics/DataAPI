@@ -6,8 +6,8 @@
 	<meta name="generator" content="LibreOffice 5.3.6.1 (Linux)"/>
 	<meta name="author" content="Casasent,Tod D"/>
 	<meta name="created" content="2019-12-23T15:02:00"/>
-	<meta name="changedby" content="Tod Casasent"/>
-	<meta name="changed" content="2020-06-26T15:24:00"/>
+	<meta name="changedby" content="Casasent,Tod D"/>
+	<meta name="changed" content="2020-08-12T19:37:00"/>
 	<meta name="AppVersion" content="16.0000"/>
 	<meta name="Company" content="M. D. Anderson Cancer Center"/>
 	<meta name="DocSecurity" content="0"/>
@@ -31,10 +31,10 @@
 	</style>
 </head>
 <body lang="en-US" link="#0563c1" dir="ltr">
-<p class="western" align="center" style="margin-bottom: 0.11in; line-height: 108%"><a name="_GoBack"></a>
+<p class="western" align="center" style="margin-bottom: 0.11in; line-height: 108%">
 <b>Data Query Form<br/>
 Tod Casasent<br/>
-2020-06-26-1030</b></p>
+2020-08-12-1430</b></p>
 <ol>
 	<li/>
 <h1 class="western">Introduction</h1>
@@ -42,11 +42,9 @@ Tod Casasent<br/>
 <p class="western" style="margin-bottom: 0.11in; line-height: 108%">This
 document gives simple instructions for using the Data Query Form.
 This document will provide minimal, but some, descriptions of
-elements such as Platforms and data descriptions.</p>
-<p class="western" style="margin-bottom: 0.11in; line-height: 108%">Note:
-A future version of the Data Query Form will provide mapping to make
-the options lists more user friendly and less dependent on the
-dataset source strings.</p>
+elements such as Platforms and data descriptions. It also includes
+instructions for accessing Standardized Data from the DAPIR (Data API
+for R) R package.</p>
 <ol>
 	<ol>
 		<li/>
@@ -61,6 +59,9 @@ Browser<br/>
 Effects
 Viewer<br/>
 <a href="https://bioinformatics.mdanderson.org/BatchEffectsViewer">https://bioinformatics.mdanderson.org/BatchEffectsViewer</a></p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">DAPIR
+on GitHub<br/>
+<a href="https://github.com/MD-Anderson-Bioinformatics/DataAPI">https://github.com/MD-Anderson-Bioinformatics/DataAPI</a></p>
 <p class="western" style="margin-bottom: 0.11in; line-height: 108%">BMB
 on GitHub (source code and additional
 documentation)<br/>
@@ -549,7 +550,7 @@ self-evident to users familiar with mutation datasets.</p>
 <h2 class="western">Copy Query String for R Package</h2>
 	</ol>
 </ol>
-<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid">
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%; page-break-inside: avoid; page-break-after: avoid"><a name="_Hlk48135152"></a>
 Clicking the &quot;Copy Query String for R Package&quot; button
 copies a string to the clipboard based on the data query selected in
 the GUI. For example, this string gives current TCGA-ACC data from
@@ -570,6 +571,64 @@ Standardized Data.</p>
 the &quot;Copy Bookmark-able URL&quot; button copies a string to the
 clipboard based on the data query selected in the GUI. The string is
 a URL that links to the selected query defined in the GUI.</p>
+<ol start="5">
+	<li/>
+<h1 class="western">DAPIR R Package</h1>
+</ol>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%">The
+DataAPI project page (
+<a href="https://github.com/MD-Anderson-Bioinformatics/DataAPI">https://github.com/MD-Anderson-Bioinformatics/DataAPI</a>
+) on GitHub gives instructions for installing the DAPIR R package.</p>
+<p class="western" style="margin-bottom: 0.11in; line-height: 108%"><a name="_GoBack"></a>
+And example of downloading data using the Query String is given
+below.</p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">#
+TCGA-ACC data -- pasted the &quot;Copy Query String for R Package&quot;
+button into queryOne &lt;- paste(&quot;&quot;)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">queryOne
+&lt;-
+paste(&quot;{\&quot;mFiles\&quot;:[\&quot;batches.tsv\&quot;],\&quot;mSources\&quot;:[],\&quot;mVariants\&quot;:[\&quot;current\&quot;],&quot;,</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">				&quot;\&quot;mProjects\&quot;:[],\&quot;mSubprojects\&quot;:[\&quot;TCGA-ACC\&quot;],\&quot;mCategories\&quot;:[],&quot;,</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">				&quot;\&quot;mPlatforms\&quot;:[],\&quot;mData\&quot;:[],\&quot;mAlgorithms\&quot;:[],\&quot;mDetails\&quot;:[],&quot;,</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">				&quot;\&quot;mVersions\&quot;:[]}&quot;,
+sep=&quot;&quot;)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">#
+temp directory</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">datasetDir
+&lt;- file.path(tempdir(), &quot;DAPIR&quot;)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">print(datasetDir)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">dir.create(datasetDir,
+showWarnings=FALSE, recursive=TRUE)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">#
+get data status</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">results
+&lt;- checkDownloadedDataStatus(queryOne, datasetDir)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">print(results)</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">#
+Download initial datasets</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">newDatasets
+&lt;- results$NEW</font></font></p>
+<p style="margin-bottom: 0in; line-height: 100%; background: #e7e6e6">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">downloadData(newDatasets,
+datasetDir)</font></font></p>
 <p class="western" style="margin-bottom: 0.11in; line-height: 108%"><br/>
 <br/>
 
