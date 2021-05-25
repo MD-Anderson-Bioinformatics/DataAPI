@@ -1,4 +1,3 @@
-
 # Data API
 
  * Rehan Akbani (owner)
@@ -26,10 +25,70 @@ MD Anderson Cancer Center Standardized Data Browser link
 https://bioinformatics.mdanderson.org/StandardizedDataBrowser
 
 MD Anderson Cancer Center Batch Effects Viewer (Query Form) link
-https://bioinformatics.mdanderson.org/BEVQF
+https://bioinformatics.mdanderson.org/BEV/QF
 
 Java projects are Netbeans 11 projects.
 R packages are RStudio projects.
+
+### MBatch Omic Browser Docker Quick Start
+
+Download the docker-compose_MQA.yml file at the root of this repository. This file is setup for use on Linux.
+
+Make the following directories.
+ - /MQA/DATA
+ - /MQA/indexes
+ - /MQA/dsc_indexes
+ - /MQA/config
+
+ 1. Copy the contents of data/testing_static/MQA/DATA into /MQA/DATA.
+ 2. Copy the contents of data/testing_static/MQA/INDEXES into /MQA/indexes.
+ 3. Copy the contents of data/testing_static/MQA/DSC_INDEXES into /MQA/dsc_indexes.
+ 4. Copy the contents of data/testing_static/MQA/CONFIG into /MQA/config.
+
+Permissions or ownership of the directories may need to be changed or matched to the Docker image user 2002.
+
+In the directory with the docker-compose.yml file run:
+
+	docker-compose -p bephub -f docker-compose_MQA.yml up --no-build -d
+
+You can stop it with:
+
+	docker-compose -p bephub -f docker-compose_MQA.yml down
+
+To connect to the MBatch Omic Browser with:
+
+	localhost:8080/MQA
+
+### MetaBatch Omic Browser Docker Quick Start
+
+Download the docker-compose_MOB.yml file at the root of this repository. This file is setup for use on Linux.
+
+Make the following directories.
+
+ - MOB/DATA
+ - /MOB/indexes
+ - /MOB/dsc_indexes
+ - /MOB/config
+
+ 1. Copy the contents of data/testing_static/MOB/DATA into /MOB/DATA.
+ 2. Copy the contents of data/testing_static/MOB/INDEXES into /MOB/indexes.
+ 3. Copy the contents of data/testing_static/MOB/DSC_INDEXES into /MOB/dsc_indexes.
+ 4. Copy the contents of data/testing_static/MOB/CONFIG into /MOB/config.
+
+Permissions or ownership of the directories may need to be changed or matched to the Docker image user 2002.
+
+In the directory with the docker-compose.yml file run:
+
+	docker-compose -p bephub -f docker-compose_MOB.yml up --no-build -d
+
+You can stop it with:
+
+	docker-compose -p bephub -f docker-compose_MOB.yml down
+
+To connect to the MBatch Omic Browser with:
+
+	localhost:8080/MtOB
+
 
 ## Links for External Libraries
 Fontawesome Icons
@@ -39,7 +98,7 @@ Datatables JQuery Plug-In
 https://datatables.net/
 
 ## Install DAPIR
-DAPIR has been tested with Java 8 and R 3.6 series.
+DAPIR has been tested with Java 8 and R 4+ series.
 ```R
     # required CRAN packages (devtools for install, httr for HTTP processing)
     install.packages(c("devtools", "httr"), dependencies=TRUE, repos = "http://cloud.r-project.org/")
@@ -48,7 +107,7 @@ DAPIR has been tested with Java 8 and R 3.6 series.
 ```
 
 ## Sample R Code for DAPIR
-Used to mirror Standardized Data locally.
+Used to copy Standardized Data locally.
 ```R
     # TCGA ACC query string from website
     queryFromSite <- "{\"mFiles\":[],\"mSources\":[],\"mVariants\":[\"current\"],\"mProjects\":[\"TCGA\"],\"mSubprojects\":[\"TCGA-ACC\"],\"mCategories\":[],\"mPlatforms\":[],\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],\"mVersions\":[]}"
@@ -65,52 +124,9 @@ Used to mirror Standardized Data locally.
     downloadData(newDatasets, datasetDir)
 ```
 
-## Quick Start with Docker:
+**For educational and research purposes only.**
 
-Clone the GitHub repository with a shallow clone, since you will not be checking anything back in. This clone call grabs the newest version from master.
-
->git clone --depth 1 https://github.com/MD-Anderson-Bioinformatics/DataAPI.git
-
-### Standardized Data Browser Docker
-
-Edit and rename the Docker Compose Template as described in the documentation 
-https://github.com/MD-Anderson-Bioinformatics/DataAPI/blob/master/docs/DataAPI_01A_DockerSDB.pdf
-
-Create and populate the /DAPI directories.
-
-With the resulting docker-compose.yml file, pull the images with:
-
->docker-compose -f docker-compose.yml pull
-
-Start the container with:
-
->docker-compose -p EXT -f docker-compose.yml up -d
-
-The EXT may be varied if needed on your system to ensure unique ids for the container.
-
-The Docker Compose container can be stopped using:
-
->docker-compose -p EXT -f docker-compose.yml down
-
-### Batch Effects Viewer Docker
-
-Edit and rename the Docker Compose Template as described in the documentation 
-https://github.com/MD-Anderson-Bioinformatics/DataAPI/blob/master/docs/DataAPI_01B_DockerBEV.pdf
-
-Create and populate the /DAPI and /BEV directories.
-
-With the resulting docker-compose.yml file, pull the images with:
-
->docker-compose -f docker-compose.yml pull
-
-Start the container with:
-
->docker-compose -p EXT -f docker-compose.yml up -d
-
-The EXT may be varied if needed on your system to ensure unique ids for the container.
-
-The Docker Compose container can be stopped using:
-
->docker-compose -p EXT -f docker-compose.yml down
-
+**Funding** 
+This work was supported in part by U.S. National Cancer Institute (NCI) grant: Weinstein, Mills, Akbani. Batch effects in molecular profiling data on cancers: detection, quantification, interpretation, and correction, 5U24CA210949
+This work was supported in part by U.S. National Cancer Institute (NCI) grant: Weinstein, Broom, Akbani. Computational Tools for Analysis and Visualization of Quality Control Issues in Metabolomic Data, U01CA235510
 

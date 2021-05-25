@@ -25,14 +25,15 @@ The UNLISTED entry is a vector of dataset IDs which are in theDownloadDir but no
 The UNCHANGED entry is a dataframe with the same columns as the NEW dataframe, listing datasets that are in the query but do not need to be updated.
 }
 \examples{
-  # TCGA-ACC data
-  queryOne <- paste("{\"mFiles\":[\"batches.tsv\"],\"mSources\":[],\"mVariants\":[\"current\"],",
-                    "\"mProjects\":[],\"mSubprojects\":[\"TCGA-ACC\"],\"mCategories\":[],",
-                    "\"mPlatforms\":[],\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],",
-                    "\"mVersions\":[]}", sep="")
+  # TCGA-ACC ahd LUSC data
+  queryOne <- paste("{\"mFiles\":[],\"mSources\":[],\"mVariants\":[\"current\"],\"mProjects\":[],",
+                     "\"mSubprojects\":[\"TCGA-ACC\",\"TCGA-LUSC\"],\"mCategories\":[],",
+                     "\"mPlatforms\":[],",
+                     "\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],\"mVersions\":[]}", sep="")
   # temp directory
   datasetDir <- file.path(tempdir(), "DAPIR")
   print(datasetDir)
+  unlink(datasetDir, recursive=TRUE)
   dir.create(datasetDir, showWarnings=FALSE, recursive=TRUE)
   # get data status
   results <- checkDownloadedDataStatus(queryOne, datasetDir)
@@ -42,11 +43,11 @@ The UNCHANGED entry is a dataframe with the same columns as the NEW dataframe, l
   newDatasets <- results$NEW
   downloadData(newDatasets, datasetDir)
 
-  # TCGA-ACC data from newest available versions
-  queryTwo <- paste("{\"mFiles\":[\"batches.tsv\"],\"mSources\":[],\"mVariants\":[\"current\"],",
-                    "\"mProjects\":[],\"mSubprojects\":[\"TCGA-ACC\"],\"mCategories\":[],",
-                    "\"mPlatforms\":[],\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],",
-                    "\"mVersions\":[]}", sep="")
+  # TCGA-ACC and BLCA data from newest available versions
+  queryTwo <- paste("{\"mFiles\":[],\"mSources\":[],\"mVariants\":[\"current\"],\"mProjects\":[],",
+                     "\"mSubprojects\":[\"TCGA-ACC\",\"TCGA-BLCA\"],\"mCategories\":[],",
+                     "\"mPlatforms\":[],",
+                     "\"mData\":[],\"mAlgorithms\":[],\"mDetails\":[],\"mVersions\":[]}", sep="")
   # get data status
   resultsTwo <- checkDownloadedDataStatus(queryTwo, datasetDir)
   print(resultsTwo)

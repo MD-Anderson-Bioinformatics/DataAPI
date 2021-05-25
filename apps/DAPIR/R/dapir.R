@@ -1,4 +1,4 @@
-# DAPIR Copyright (c) 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020 University of Texas MD Anderson Cancer Center
+# DAPIR Copyright (c) 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 University of Texas MD Anderson Cancer Center
 #
 # This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 2 of the License, or (at your option) any later version.
 #
@@ -13,7 +13,7 @@ library(httr)
 
 dapirVersion <- function()
 {
-  "2020-08-31-0800"
+  "BEA_VERSION_TIMESTAMP"
 }
 
 ####
@@ -23,9 +23,7 @@ dapirVersion <- function()
 mdadataEnv <- new.env()
 
 ## PROD URL
-assign("globalURL", "https://bioinformatics.mdanderson.org/StandardizedDataBrowser", envir=mdadataEnv)
-
-
+assign("globalURL", "https://bioinformatics.mdanderson.org/MBatchOmicBrowser", envir=mdadataEnv)
 
 # export
 setGlobalUrl <- function(theURL)
@@ -51,13 +49,20 @@ pasteToGlobalURL <- function(theExtension)
 headerIndexOf <- function(theHeaders, theTitle)
 {
   index <- NULL
-  for (count in 1:length(theHeaders))
+  if (length(theHeaders)>0)
   {
-    myHeader <- theHeaders[[count]]
-    if (theTitle == myHeader$title)
+    for (count in 1:length(theHeaders))
     {
-      index <- count
+      myHeader <- theHeaders[[count]]
+      if (theTitle == myHeader$title)
+      {
+        index <- count
+      }
     }
+  }
+  else
+  {
+    print("return message has no headers")
   }
   if (is.null(index))
   {
@@ -69,10 +74,10 @@ headerIndexOf <- function(theHeaders, theTitle)
 getIdDataframe <- function(theQueryResult)
 {
   idIndex <- headerIndexOf(theQueryResult$headers, "ID")
-  downloadIndex <- headerIndexOf(theQueryResult$headers, "Download")
+  downloadIndex <- headerIndexOf(theQueryResult$headers, "Data Download")
   versionIndex <- headerIndexOf(theQueryResult$headers, "Version")
   vectorId <- as.vector(unlist(sapply(theQueryResult$data, function(theRow) { theRow[idIndex] })))
-  vectorDesc <- as.vector(unlist(sapply(theQueryResult$data, function(theRow) { paste(theRow, sep=" - ", collapse=" - ")})))
+  vectorDesc <- as.vector(unlist(sapply(theQueryResult$data, function(theRow) { paste(theRow[3:12], sep=" - ", collapse=" - ")})))
   vectorVersion <- as.vector(unlist(sapply(theQueryResult$data, function(theRow) { theRow[versionIndex] })))
   vectorDownload <- as.vector(unlist(sapply(theQueryResult$data, function(theRow) { theRow[downloadIndex] })))
   data.frame(ID=vectorId, DESC=vectorDesc, VERSION=vectorVersion, DOWNLOAD=vectorDownload, stringsAsFactors=FALSE)
@@ -80,12 +85,21 @@ getIdDataframe <- function(theQueryResult)
 
 getDownloadableData <- function(theQueryRequest)
 {
-  theURL=pasteToGlobalURL("/query?search=")
+  theURL=pasteToGlobalURL("/query/?search=")
   theURL <- paste(theURL, URLencode(theQueryRequest, reserved=TRUE), sep="")
   response <- GET(theURL)
   print(response)
   stop_for_status(response)
-  getIdDataframe(content(response))
+  myContent <- content(response)
+  message("headers")
+  print(unlist(lapply(myContent$headers,function(theVal) {theVal$title})))
+  message("data")
+  for(dataOption in myContent$data)
+  {
+    message("OPTION")
+    print(unlist(dataOption))
+  }
+  getIdDataframe(myContent)
 }
 
 getNewDF <- function(theDataDF, theDirVector)
@@ -111,7 +125,7 @@ checkDownloadedDataStatus <- function(theQueryRequest, theDownloadDir)
 {
   print(dapirVersion())
   dataDF <- getDownloadableData(theQueryRequest)
-  dirVector <- list.dirs(theDownloadDir, full.names=FALSE)
+  dirVector <- list.dirs(theDownloadDir, full.names=FALSE, recursive=FALSE)
   dirVector <- dirVector[dirVector!=""]
   resultList <- list(getNewDF(dataDF, dirVector), getUnlistedDF(dataDF, dirVector), getUnchangedDF(dataDF, dirVector))
   names(resultList) <- c("NEW", "UNLISTED", "UNCHANGED")
