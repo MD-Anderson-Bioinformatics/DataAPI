@@ -1,7 +1,7 @@
 # this is the docker-compose version
 version: '3'
 
-# file version 2021-08-13-11001
+# file version 2021-10-14-09191
 
 networks:
     # network for this compose stack
@@ -21,7 +21,7 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: mob_cont_hub
-        image: mdabcb/mob_image:2021-08-13-1100
+        image: mdabcb/mob_image:2021-10-14-0919
         volumes:
             # outside access for data files outside:inside
             - /MOB/indexes:/DAPI/INDEXES:ro
