@@ -1,7 +1,7 @@
-# this is the docker-compose version
+# this is the docker compose version
 version: '3'
 
-# file version 2021-10-14-09191
+# file version 2023-05-17-13171
 
 networks:
     # network for this compose stack
@@ -21,13 +21,12 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: mob_cont_hub
-        image: mdabcb/mob_image:2021-10-14-0919
+        image: mdabcb/mob_image:2023-05-17-1317
         volumes:
             # outside access for data files outside:inside
-            - /MOB/indexes:/DAPI/INDEXES:ro
-            - /MOB/dsc_indexes:/DAPI/DSC_INDEXES:ro
-            - /MOB/config:/DAPI/CONFIG:ro
-            - /MOB/DATA:/DAPI/DATA:ro
+            - /MOB/DATA/index:/DAPI_MOB/INDEXES:ro
+            - /MOB/DATA/util:/DAPI_MOB/CONFIG:ro
+            - /MOB/DATA/results:/DAPI_MOB/DATA:ro
             - /MOB/logs:/opt/tomcat/logs
             # read-only file to set time to same in image as on server
             - /etc/localtime:/etc/localtime:ro

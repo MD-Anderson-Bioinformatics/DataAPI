@@ -49,11 +49,11 @@ Permissions or ownership of the directories may need to be changed or matched to
 
 In the directory with the docker-compose.yml file run:
 
-	docker-compose -p bephub -f docker-compose_MQA.yml up --no-build -d
+	docker compose -p bephub -f docker-compose_MQA.yml up --no-build -d
 
 You can stop it with:
 
-	docker-compose -p bephub -f docker-compose_MQA.yml down
+	docker compose -p bephub -f docker-compose_MQA.yml down
 
 To connect to the MBatch Omic Browser with:
 
@@ -79,11 +79,11 @@ Permissions or ownership of the directories may need to be changed or matched to
 
 In the directory with the docker-compose.yml file run:
 
-	docker-compose -p bephub -f docker-compose_MOB.yml up --no-build -d
+	docker compose -p bephub -f docker-compose_MOB.yml up --no-build -d
 
 You can stop it with:
 
-	docker-compose -p bephub -f docker-compose_MOB.yml down
+	docker compose -p bephub -f docker-compose_MOB.yml down
 
 To connect to the MBatch Omic Browser with:
 

@@ -14,6 +14,8 @@ echo "update docs"
 
 pandoc --metadata=title:"Standardized Data GDC Converters" -o ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/GDCConverters.html --self-contained ${DOC_DIR}/STD/StdData_03_Docs_GDCConverters.docx
 
+pandoc --metadata=title:"Omic Browser Data" -o ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/OmicBrowserData.html --self-contained ${DOC_DIR}/BEV/OB_01D_MBatchData.docx
+
 pandoc --metadata=title:"Query Form Usage" -o ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/QFusage.html --self-contained ${DOC_DIR}/SDB/StdData_03_Docs_QueryForm.docx
 
 pandoc --metadata=title:"MBatch Statistics" -o ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/MBatch_04-99_Statistics.html --self-contained ${DOC_DIR}/MBatch/MBatch_04-99_Statistics.docx
@@ -21,16 +23,18 @@ pandoc --metadata=title:"MBatch Statistics" -o ${STD_DIR}/apps/BatchEffectsViewe
 echo "compile BatchEffectsViewer"
 cd ${STD_DIR}/apps/BatchEffectsViewer
 
-echo "compile java file"
-javac -d ./ ./src/main/java/edu/mda/bcb/bev/util/BEV_AppGenerator.java
+#echo "compile java file"
+#javac -d ./ ./src/main/java/edu/mda/bcb/bev/util/BEV_AppGenerator.java
 
-echo "build BatchEffectsViewer Stand Alone HTML file"
-java edu/mda/bcb/bev/util/BEV_AppGenerator ./src/main/webapp/view/ ./src/main/webapp/bevApp.html
+#echo "build BatchEffectsViewer Stand Alone HTML file"
+#java edu/mda/bcb/bev/util/BEV_AppGenerator ./src/main/webapp/view/ ./src/main/webapp/bevApp.html
 
-echo "remove compiled class"
-rm -r edu
+#echo "remove compiled class"
+#rm -r edu
 
 echo "build BatchEffectsViewer war"
+rm ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/view/lib/jquery-ui-1.13.2/index.html
+rm ${STD_DIR}/apps/BatchEffectsViewer/src/main/webapp/query/jquery-ui-1.13.2/index.html
 mvn clean install dependency:copy-dependencies
 
 #echo "Check DAPIR"
