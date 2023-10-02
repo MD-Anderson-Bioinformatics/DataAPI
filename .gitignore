@@ -1,8 +1,10 @@
 apps/*/build
 apps/*/dist
+apps/*/target
 apps/*/nbproject/private
 apps/*/.Rproj.user
 apps/*/.Rbuildignore
 apps/*/.Rhistory
 apps/*/target
+apps/BatchEffectsViewer/src/main/webapp/bevApp.html
 .Rproj.user

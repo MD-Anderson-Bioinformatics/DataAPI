@@ -4,11 +4,11 @@ FROM fedora:38
 
 LABEL edu.mda.bcb.name="MBatch Omics Browser" \
       edu.mda.bcb.sub="mob" \
-      edu.mda.bcb.mob.version="BEA_VERSION_TIMESTAMP" \
-      edu.mda.bcb.mob.log="<LOG_DIR>" \
-      edu.mda.bcb.mob.start="<START_SCRIPT>" \
-      edu.mda.bcb.mob.stop="<STOP_SCRIPT>" \
-      edu.mda.bcb.mob.upcheck="<UPCHECK_SCRIPT>"
+      edu.mda.bcb.mob.version="2023-09-22-1600" \
+      edu.mda.bcb.mob.log="/MOB/logs" \
+      edu.mda.bcb.mob.start="-" \
+      edu.mda.bcb.mob.stop="-" \
+      edu.mda.bcb.mob.upcheck="-"
 
 ####
 #### this dockerfile's user
@@ -18,8 +18,8 @@ LABEL edu.mda.bcb.name="MBatch Omics Browser" \
 # also, set permissions and ownerships on internal docker directories
 # set home to 777 so vignettes build with weird mkdir .texlive2018
 # bcbuser:bcbgroup are used for tomcat setup
-RUN groupadd -g <GROUPID> bcbgroup && \
-    useradd -l -s /bin/bash -d /home/bcbuser -u <USERID> -g <GROUPID> bcbuser && \
+RUN groupadd -g 2002 bcbgroup && \
+    useradd -l -s /bin/bash -d /home/bcbuser -u 2002 -g 2002 bcbuser && \
     chown -R bcbuser:bcbgroup /home/bcbuser && \
     chmod -R 777 /home/bcbuser && \
     mkdir /BEA && \

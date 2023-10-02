@@ -5,7 +5,7 @@
 package edu.mda.bcb.bev.util;
 
 import java.util.Enumeration;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 /**
  *
