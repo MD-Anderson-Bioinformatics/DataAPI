@@ -22,6 +22,8 @@ pandoc --metadata=title:"MBatch Statistics" -o ${STD_DIR}/apps/MetabatchOmicBrow
 
 echo "compile MetabatchOmicBrowser"
 cd ${STD_DIR}/apps/MetabatchOmicBrowser
+curl -o ${STD_DIR}/apps/MetabatchOmicBrowser/src/main/webapp/view/lib/ngchmEmbed-min.js https://raw.githubusercontent.com/MD-Anderson-Bioinformatics/NG-CHM-Artifacts/2.24.1-build-23/viewer.standalone/ngchmEmbed-min.js
+curl -o ${STD_DIR}/apps/MetabatchOmicBrowser/src/main/webapp/view/lib/ngchmWidget-min.js https://raw.githubusercontent.com/MD-Anderson-Bioinformatics/NG-CHM-Artifacts/2.24.1-build-23/viewer.standalone/ngchmWidget-min.js
 
 #echo "compile java file"
 #javac -d ./ ./src/main/java/edu/mda/bcb/bev/util/BEV_AppGenerator.java

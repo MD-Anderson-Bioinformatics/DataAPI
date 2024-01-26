@@ -1,7 +1,7 @@
 # this is the docker compose version
 version: '3'
 
-# file version 2023-09-22-16001
+# file version 2024-01-26-12001
 
 networks:
     # network for this compose stack
@@ -21,12 +21,12 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: mqa_cont_hub
-        image: mdabcb/mqa_image:2023-09-22-1600
+        image: mdabcb/mqa_image:2024-01-26-1200
         volumes:
             # outside access for data files outside:inside
-            - /MQA/DATA/index:/BEA/DAPI_MQA/INDEXES:ro
-            - /MQA/DATA/util:/BEA/DAPI_MQA/CONFIG:ro
-            - /MQA/DATA/results:/BEA/DAPI_MQA/DATA:ro
+            - /MQA/DATA/INDEXES:/BEA/DAPI_MQA/INDEXES:ro
+            - /MQA/DATA/CONFIG:/BEA/DAPI_MQA/CONFIG:ro
+            - /MQA/DATA/DATA:/BEA/DAPI_MQA/DATA:ro
             - /MQA/logs:/opt/tomcat/logs
             # read-only file to set time to same in image as on server
             - /etc/localtime:/etc/localtime:ro

@@ -36,14 +36,14 @@ Download the docker-compose_MQA.yml file at the root of this repository. This fi
 
 Make the following directories.
  - /MQA/DATA
- - /MQA/indexes
- - /MQA/dsc_indexes
- - /MQA/config
+ - /MQA/INDEXES
+ - /MQA/DSC_INDEXES
+ - /MQA/CONFIG
 
  1. Copy the contents of data/testing_static/MQA/DATA into /MQA/DATA.
- 2. Copy the contents of data/testing_static/MQA/INDEXES into /MQA/indexes.
- 3. Copy the contents of data/testing_static/MQA/DSC_INDEXES into /MQA/dsc_indexes.
- 4. Copy the contents of data/testing_static/MQA/CONFIG into /MQA/config.
+ 2. Copy the contents of data/testing_static/MQA/INDEXES into /MQA/INDEXES.
+ 3. Copy the contents of data/testing_static/MQA/DSC_INDEXES into /MQA/DSC_INDEXES.
+ 4. Copy the contents of data/testing_static/MQA/CONFIG into /MQA/CONFIG.
 
 Permissions or ownership of the directories may need to be changed or matched to the Docker image user 2002.
 
@@ -66,9 +66,9 @@ Download the docker-compose_MOB.yml file at the root of this repository. This fi
 Make the following directories.
 
  - MOB/DATA
- - /MOB/indexes
- - /MOB/dsc_indexes
- - /MOB/config
+ - /MOB/INDEXES
+ - /MOB/DSC_INDEXES
+ - /MOB/CONFIG
 
  1. Copy the contents of data/testing_static/MOB/DATA into /MOB/DATA.
  2. Copy the contents of data/testing_static/MOB/INDEXES into /MOB/indexes.
