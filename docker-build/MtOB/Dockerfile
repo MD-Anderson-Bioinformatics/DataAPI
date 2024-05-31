@@ -4,7 +4,7 @@ FROM fedora:38
 
 LABEL edu.mda.bcb.name="MBatch Omics Browser" \
       edu.mda.bcb.sub="mob" \
-      edu.mda.bcb.mob.version="2024-01-26-1200" \
+      edu.mda.bcb.mob.version="2024-05-29-1000" \
       edu.mda.bcb.mob.log="/MOB/logs" \
       edu.mda.bcb.mob.start="-" \
       edu.mda.bcb.mob.stop="-" \
@@ -67,7 +67,7 @@ ENV LD_LIBRARY_PATH=/usr/lib/jvm/java-17-openjdk/lib/server
 
 # install Tomcat 10, set to run as bcbuser
 ENV TOMCAT_MAJOR=10 \
-    TOMCAT_VERSION=10.1.18 \
+    TOMCAT_VERSION=10.1.24 \
     TOMCAT_HOME=/opt/tomcat \
     CATALINA_HOME=/opt/tomcat \
     CATALINA_OUT=/dev/null

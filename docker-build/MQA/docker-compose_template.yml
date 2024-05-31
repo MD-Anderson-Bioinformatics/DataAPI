@@ -7,9 +7,6 @@ networks:
     # network for this compose stack
     mqa_network_<ENVIRON>:
         driver: bridge
-#SUBNET        ipam:
-#SUBNET            config:
-#SUBNET            - subnet: <SUBNET>
 services:
     mqa_service:
         networks:
@@ -19,7 +16,7 @@ services:
         build:
             # build from directory in context and Dockerfile
             context: .
-            dockerfile: Dockerfile
+            dockerfile: Dockerfile<DC_DF_DVLP>
         container_name: mqa_cont_<ENVIRON>
         image: <IMAGEURL>
         volumes:

@@ -1,15 +1,12 @@
 # this is the docker compose version
 version: '3'
 
-# file version 2024-01-26-12001
+# file version 2024-05-29-10001
 
 networks:
     # network for this compose stack
     mob_network_hub:
         driver: bridge
-#SUBNET        ipam:
-#SUBNET            config:
-#SUBNET            - subnet: 0
 services:
     mob_service:
         networks:
@@ -21,7 +18,7 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: mob_cont_hub
-        image: mdabcb/mob_image:2024-01-26-1200
+        image: mdabcb/mob_image:2024-05-29-1000
         volumes:
             # outside access for data files outside:inside
             - /MOB/DATA/INDEXES:/BEA/DAPI_MOB/INDEXES:ro
